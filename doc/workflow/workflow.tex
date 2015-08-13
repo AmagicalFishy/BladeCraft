@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{tikz-cd}
+\usepackage{enumerate}
+
+\begin{document}
+\subsection*{Goals}
+\begin{itemize}
+    \item Make a MUD
+\end{itemize}
+
+\begin{equation*} \label{g1}
+\begin{tikzcd}
+    & \text{Info} \arrow[dr] & \text{Material} \arrow[d]
+    & \text{Enchantments} \arrow[dl] \\
+    && \text{Item} \ar[dll] \ar[dl] \ar[d] \ar[dr] \ar[drr] \\
+    \text{Weapon} & \text{Clothing} & \text{Consumable} & \text{Landmark} & \text{Container}
+    \end{tikzcd}
+\end{equation*}
+
+\subsection*{Descriptions}
+\textbf{Item:} Has data members durability, weight, weight-distribution, flexibility, 
+
+\subsubsection*{Forward Declared Dependencies}
+\begin{enumerate}
+    \item \textbf{Info:} Contains external description of item. This
+    includes how it looks, size, and volume-type. Size and volume type
+    factor into what said item can fit into and weight distribution.  
+    Also contains unique ID and name.
+
+    \item \textbf{Material:} Contains information regarding the
+    material of the item. This factors primarily into things like
+    durability, weight, density, and flexibility. 
+
+    \item \textbf{Enhancements:} Contains information regarding how
+    this item affects the statistics of the one who posesses it or the
+    one it's used on.
+\end{enumerate}
+
+\subsubsection*{Child Classes (Dependants in which `Item' is Included)}
+\begin{enumerate}
+    \item \textbf{Weapon:} Has data members damage-type.
+
+    \item \textbf{Clothing:} Has data members defense, 
+        wearable-locations.
+
+\end{enumerate}
+
+\subsection*{Possible Commands} \subsubsection*{Weaponry} jab, light
+swing, medium swing, heavy swing, parry, guard, special
+
+\subsubsection*{Clothing} wear
+
+\bigskip
+\bigskip
+\hline 
+
+\subsection*{Ideas}
+\begin{itemize}
+    \item Combat like Vindictus/PSO. It needs to be \textit{that} good.
+        \begin{itemize}
+            \item Step forward when swing (using attacks as movement)
+            \item Fast-paced
+        \end{itemize}
+    \item Environment/tiles/depth like MineCraft
+    \item Graphics like Final Fantasy Tactics (maybe taller)
+    \item Card Game like FF8 or FF9
+    \item A primary tower-dungeon like Sword Art Online (but with a 
+        whole world built around it; it doesn't consist of just the
+        tower-dungeon).
+    \item Play some .Hack and see how that combat is.
+
+\end{itemize}
+\end{document}

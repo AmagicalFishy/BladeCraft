@@ -33,7 +33,7 @@ class Character
         // Equip an item
         void equip(std::string item_name);
 
-        // Return pointer to whatever is equipped 
+        // Return whatever is equipped 
         Item* getEquipped(std::string slot);
 
         // Attacks

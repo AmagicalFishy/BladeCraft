@@ -13,25 +13,23 @@
 
 //====================
 // Classes
-class Item
-{
+
+class Item {
     public: 
+        static int itemSerialCounter;
         Item();
-        Item(float weight, std::string material, std::string name);
+        Item(int uniqueID, int itemID);
+        int getID();
 
-        void setName(std::string new_name);
-        std::string getName();
-
-        void setMaterial(std::string new_material);
-        std::string getMaterial();
-
-        void setWeight(float new_weight);
-        float getWeight();
+        float weight_;
+        std::string material_;
+        std::string name_;
 
     private:
-        float m_weight;
-        std::string m_material;
-        std::string m_name;
+        int uniqueID;
+        int itemID;
+        int[] enhancements;
+
 };
 
 #endif

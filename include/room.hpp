@@ -5,25 +5,30 @@
 
 //====================
 // Forward declared dependencies
+class Item;
 
 //====================
 // Included dependencies
-#include "common/linkedlist.hpp"
-
-
+#include "linkedlist.hpp"
+#include "item.hpp"
 
 //====================
 // Class
 class Room {
     public:
-        static int room_serial; // Counter of room serial numbers
         Room();
-        void addItem(Item* item);
+
+        static int roomSerialCounter; // Counter of room serial numbers
+        int roomID_;
+
+        std::size_t numItems();
+        void addItem(Item item);
+        LinkedList<Item>::ListIterator getItems();
+        void showDescription();
 
     private:
-        int roomID_;
-        int numberOfItems_;
-        ItemList itemsInThisRoom_;
+        LinkedList<Item> itemsInThisRoom_;
+};
         
 #endif
 

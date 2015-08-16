@@ -1,7 +1,5 @@
 #include <iostream>
-#include "character_headers.hpp"
-#include "item_headers.hpp"
-#include "modes_headers.hpp"
+#include "headerlist.hpp"
 
 using namespace std;
 
@@ -11,27 +9,13 @@ int main() {
     string command = "";
 
     // Initialize game!
-    CommandMode* Command = new CommandMode();
-    ActionMode* Action = new ActionMode();
+    CommandMode Command = CommandMode();
+    ActionMode Action = ActionMode();
 
     // Create stuff
-    Character* protagonist = new Character();
-    Character* monster = new Character();
-    Item* sword = new Item(20.0, "steel", "Sword");
-
-    // Main game loop
-    while (game_running == true) { 
-        // Parse commands in command mode
-        if (mode == "command"){
-            cout << "Command: ";
-            getline(cin, command);
-            cout << "\n";
-            Command->parseCommand(command);
-        }
-
-        // Perform actions in action mode
-        if (mode == "action"){}
-    }
+    Character protagonist = Character();
+    Character monster = Character();
+    Item sword = Item(20.0, "steel", "Sword");
 
     return 0;
-}
+};

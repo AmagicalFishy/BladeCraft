@@ -1,21 +1,19 @@
 #include "room.hpp"
+#include <iostream>
 
-ItemList::next() { current_ = current_::next; }
-ItemNode::ItemNode(Item* item) { item_ = item; }
+int Room::roomSerialCounter = 000000;
 
-Room::room_serial = 000000;
 Room::Room() {
-    // Sets ID number and increments ID
-    roomID = room_serial;
-    room_serial += 1;
-    numberOfItems_ = 0;
-}
-Room::addItem(Item* item) {
-    tmpItem = ItemNode(item);
-    if (numberOfItems == 0) { 
-        itemsInThisRoom_::next = tmpItem;
-        itemsInThisRoom_ = tmpItem;
-    }
+    roomID_ = roomSerialCounter;
+    roomSerialCounter++;
+};
 
-    else {
-        itemsInThisRoom_::next = ItemNode(item);
+std::size_t Room::numItems() { return itemsInThisRoom_.size_; };
+void Room::addItem(Item item) { itemsInThisRoom_.addObject(item); };
+LinkedList<Item>::ListIterator Room::getItems() { 
+    return itemsInThisRoom_.getIterator(); 
+};
+void Room::showDescription() { 
+    std::cout << "IT'S A BIG FUCKING ROOM"; 
+};
+

@@ -1,27 +1,28 @@
-INC_DIR = ..
-CFLAGS = -O -I$(INC_DIR)
+IDIR = -Iinclude -Ilib
+LDIR = lib
+CFLAGS = -g -O $(IDIR) -std=c++11 -fdiagnostics-color
 CPP = g++
+ODIR = build
+SDIR = src
 
-BladeCraft: main.o character.o item.o actionmode.o commandmode.o
-	$(CPP) $(CFLAGS) -o BladeCraft main.o character.o item.o actionmode.o commandmode.o
+_DEPS = linkedlist.h
+DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
 
-main.o: main.cpp
-	$(CPP) $(CFLAGS) -c main.cpp
+_OBJ = main.o character.o item.o actionmode.o commandmode.o room.o
+OBJ = $(patsubst %, $(ODIR)/%, $(_OBJ))
 
-item.o: ../item/item.cpp
-	$(CPP) $(CFLAGS) -c ../item/item.cpp
+BladeCraft: $(OBJ) 
+	$(CPP) -o $@ $^ $(CFLAGS)
 
-character.o: ../character/character.cpp
-	$(CPP) $(CFLAGS) -c ../character/character.cpp
+$(ODIR)/%.o: $(SDIR)/%.cpp $(LDIR) $(ODIR)
+	$(CPP) -c -o $@ $< $(CFLAGS)
 
-actionmode.o: ../modes/actionmode.cpp
-	$(CPP) $(CFLAGS) -c ../modes/actionmode.cpp
+$(ODIR):
+	mkdir -p $@
 
-commandmode.o: ../modes/commandmode.cpp
-	$(CPP) $(CFLAGS) -c ../modes/commandmode.cpp
-
-
+.PHONY: clean
 
 clean:
-	rm -f core ../*/*.o
-	rm BladeCraft
+	rm -f $(ODIR)/*.o core 
+	rm -rf build
+	rm -f BladeCraft

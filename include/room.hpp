@@ -26,8 +26,8 @@ class Room {
         LinkedList<Item>::ListIterator getItems();
         void showDescription();
 
-    private:
         LinkedList<Item> itemsInThisRoom_;
+    private:
 };
         
 #endif

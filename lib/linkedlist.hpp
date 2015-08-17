@@ -27,8 +27,6 @@ template<class T> struct LinkedList {
             public:
                 ListIterator();
                 explicit ListIterator(LinkedList<T>& parentList);
-                T* begin();
-                T* end();
                 std::size_t size();
 
                 // Operators
@@ -36,20 +34,22 @@ template<class T> struct LinkedList {
                 //ListIterator operator++(int);
                 ListIterator& operator--();
                 //ListIterator operator--(int);
-                T& operator*();
+                T& operator*() const;
                 //ListIterator& operator=(const ListIterator&);
-                //bool operator==(const ListIterator& iter);
+                //bool operator==(const ListIterator& otherIter);
                 //bool operator==(const T& otherObject);
-                //bool operator!=(const ListIterator& otherIter);
+                bool operator!=(const ListIterator& otherIter);
                 //bool operator!=(const T& otherObject);
 
             private:
                 typename LinkedList::Node* current_;
-                typename LinkedList::Node& parentHead_;
-                typename LinkedList::Node& parentTail_;
+                //typename LinkedList::Node& parentHead_;
+                //typename LinkedList::Node& parentTail_;
         };
 
-        ListIterator getIterator();
+
+        ListIterator begin();
+        ListIterator end();
         std::size_t size_;
 
     private:
@@ -66,7 +66,6 @@ template<class T> struct LinkedList {
 
         Node head_;
         Node tail_;
-        ListIterator anIterator;
 };
 
 //====================
@@ -74,10 +73,9 @@ template<class T> struct LinkedList {
 
 // Linked List default constructor 
 template<class T> LinkedList<T>::LinkedList() 
-: size_{0}, anIterator(*this) {
+: size_{0} {
     head_.next_ = &tail_;
     tail_.prev_ = &head_;
-
 };
 
 // Linked List copy constructor
@@ -88,14 +86,9 @@ LinkedList(const LinkedList& srcList) {
     tail_.prev_ = &head_;
     ListIterator nodesToCopy = srcList.getIterator();
 
-    while (&*++nodesToCopy) { 
+    while (nodesToCopy != srcList.end()) { 
         this->addObject(*nodesToCopy);
         srcList.removeObject(1);
-        //Node* copiedNode = new Node(*nodesToCopy++);
-        //copiedNode->next_ = head_.next_;
-        //head_.next_->prev_ = copiedNode;
-        //copiedNode->prev_ = &head_;
-        //head_.next_ = copiedNode;
     };
     delete &srcList;
 };
@@ -137,17 +130,9 @@ template<class T> void LinkedList<T>::removeObject(int position) {
 
 // Linked List Iterator constructor
 template<class T> LinkedList<T>::ListIterator::
-ListIterator(LinkedList<T>& parentList) 
-: parentHead_(parentList.head_), parentTail_(parentList.tail_) {
-    current_ = &(parentList.head_);
-};
-
-// Return first and last objects in Linked List
-template<class T> T* LinkedList<T>::ListIterator::begin() { 
-    return parentHead_.next_->object_;
-};
-template<class T> T* LinkedList<T>::ListIterator::end() {
-    return parentTail_.prev_->object_;
+ListIterator(LinkedList<T>& parentList) {
+//: parentHead_(parentList.head_), parentTail_(parentList.tail_) {
+    current_ = parentList.head_.next_;
 };
 
 // Return size of Linked list
@@ -186,22 +171,33 @@ ListIterator::operator--() {
 
 // Return object pointed to
 template<class T> T& LinkedList<T>::ListIterator::
-operator*() {
-    if (current_->object_) { return *(current_->object_); }
-    else { throw std::runtime_error("Iterator points to NULL"); }
+operator*() const {
+        return *(current_->object_); 
+
+// throw std::runtime_error("Iterator's object points to NULL"); }
 };
 
-// Boolean
+// Comparisons
 //template<class T> bool LinkedList<T>::ListIterator::
-//operator==(const ListIterator& iter) {
-//    if (*iter == NULL) { return false; }
-//    else { return true; };
+//operator==(const LinkedList<T>::ListIterator& otherIter) {
+//    return &(**this) == &(*otherIter);
 //};
+template<class T> bool LinkedList<T>::ListIterator::
+operator!=(const ListIterator& otherIter) { 
+    return &(**this) != &(*otherIter);
+};
 
-// Return an iterator object
+// Return an iterator object via begin() and end()
 template<class T> typename LinkedList<T>::ListIterator
-LinkedList<T>::getIterator() {
-    return anIterator;
+LinkedList<T>::begin() {
+    ListIterator beginIterator(*this);
+    return beginIterator;
+};
+template<class T> typename LinkedList<T>::ListIterator
+LinkedList<T>::end() {
+    ListIterator endIterator(*this);
+    for (int ii = 0; ii < size_; ++ii) { ++endIterator; }; 
+    return endIterator;
 };
 
 // Node constructors

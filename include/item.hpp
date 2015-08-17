@@ -10,6 +10,8 @@
 //====================
 // Included dependencies
 #include <string>
+#include <array>
+#include <map>
 
 //====================
 // Classes
@@ -17,18 +19,25 @@
 class Item {
     public: 
         static int itemSerialCounter;
+        // Constructors
         Item();
-        Item(int uniqueID, int itemID);
+        Item(std::string name, int typeID);
+        Item(std::string name);
+        Item(std::string name, std::string material);
+        Item(std::string name, std::string material, 
+                std::array<int, 2> stats);
+        // ------
         int getID();
+        std::map<std::string, int> getStats();
 
         float weight_;
-        std::string material_;
         std::string name_;
+        std::string material_;
 
     private:
-        int uniqueID;
-        int itemID;
-        int[] enhancements;
+        int uniqueID_;
+        int itemID_;
+        std::array<int, 2> enhancements_;
 
 };
 

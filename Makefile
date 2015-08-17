@@ -1,6 +1,6 @@
 IDIR = -Iinclude -Ilib
 LDIR = lib
-CFLAGS = -g -O $(IDIR) -std=c++11 -fdiagnostics-color
+CFLAGS = -Wall -pg -g -O $(IDIR) -std=c++11 -fdiagnostics-color
 CPP = g++
 ODIR = build
 SDIR = src

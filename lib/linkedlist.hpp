@@ -36,15 +36,13 @@ template<class T> struct LinkedList {
                 //ListIterator operator--(int);
                 T& operator*() const;
                 //ListIterator& operator=(const ListIterator&);
-                //bool operator==(const ListIterator& otherIter);
+                bool operator==(const ListIterator& otherIter);
                 //bool operator==(const T& otherObject);
                 bool operator!=(const ListIterator& otherIter);
                 //bool operator!=(const T& otherObject);
 
             private:
                 typename LinkedList::Node* current_;
-                //typename LinkedList::Node& parentHead_;
-                //typename LinkedList::Node& parentTail_;
         };
 
 
@@ -57,11 +55,11 @@ template<class T> struct LinkedList {
         struct Node {
             Node();
             Node(T& object);
-            Node(const Node&);
+            Node(const Node&) = delete;
 
+            T* const object_;
             Node* next_;
             Node* prev_;
-            T* object_;
         };
 
         Node head_;
@@ -84,18 +82,18 @@ LinkedList(const LinkedList& srcList) {
     size_ = srcList.size_;
     head_.next_ = &tail_;
     tail_.prev_ = &head_;
-    ListIterator nodesToCopy = srcList.getIterator();
+    ListIterator nodesToCopy = srcList.begin();
 
     while (nodesToCopy != srcList.end()) { 
         this->addObject(*nodesToCopy);
         srcList.removeObject(1);
     };
-    delete &srcList;
+    //delete &srcList;
 };
     
 // Linked List destructor
 template<class T> LinkedList<T>::~LinkedList() {
-    for (int ii = 1; ii == size_; ++ii) {
+    for (unsigned int ii = 0; ii < size_; ++ii) {
         Node* toDelete = head_.next_;
         head_.next_ = head_.next_->next_;
         delete toDelete;
@@ -117,7 +115,7 @@ template<class T> void LinkedList<T>::removeObject(int position) {
     Node* toDelete = &head_;
     if (position > size_ || position < 0) { 
         throw(std::out_of_range("Invalid index in removeObject " 
-                    "argument")); 
+            "argument")); 
     };
     for (int ii = 0; ii < position; ++ii) {
         toDelete = toDelete->next_;
@@ -131,7 +129,6 @@ template<class T> void LinkedList<T>::removeObject(int position) {
 // Linked List Iterator constructor
 template<class T> LinkedList<T>::ListIterator::
 ListIterator(LinkedList<T>& parentList) {
-//: parentHead_(parentList.head_), parentTail_(parentList.tail_) {
     current_ = parentList.head_.next_;
 };
 
@@ -172,16 +169,17 @@ ListIterator::operator--() {
 // Return object pointed to
 template<class T> T& LinkedList<T>::ListIterator::
 operator*() const {
-        return *(current_->object_); 
-
-// throw std::runtime_error("Iterator's object points to NULL"); }
+    //if (current_->object_) {
+        return *(current_->object_);  
+    //else {
+     //   throw std::runtime_error("Iterator's object points to NULL"); }
 };
 
 // Comparisons
-//template<class T> bool LinkedList<T>::ListIterator::
-//operator==(const LinkedList<T>::ListIterator& otherIter) {
-//    return &(**this) == &(*otherIter);
-//};
+template<class T> bool LinkedList<T>::ListIterator::
+operator==(const ListIterator& otherIter) {
+    return &(**this) == &(*otherIter);
+};
 template<class T> bool LinkedList<T>::ListIterator::
 operator!=(const ListIterator& otherIter) { 
     return &(**this) != &(*otherIter);
@@ -196,7 +194,7 @@ LinkedList<T>::begin() {
 template<class T> typename LinkedList<T>::ListIterator
 LinkedList<T>::end() {
     ListIterator endIterator(*this);
-    for (int ii = 0; ii < size_; ++ii) { ++endIterator; }; 
+    for (unsigned int ii = 0; ii < size_; ++ii) { ++endIterator; }; 
     return endIterator;
 };
 
@@ -204,8 +202,7 @@ LinkedList<T>::end() {
 template<class T> LinkedList<T>::Node::Node()
 : object_(nullptr), next_(nullptr), prev_(nullptr) {};
 
-template<class T> LinkedList<T>::Node::Node(T& object) {
-    object_ = &object;
-};
+template<class T> LinkedList<T>::Node::Node(T& object) 
+: object_(&object) {};
 
 #endif

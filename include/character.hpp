@@ -20,31 +20,11 @@ class Character
         // Constructor
         Character();
 
-        // Getter and setter methods
-        int getAttribute(std::string name);
-        void setAttribute(std::string name, int value);
-        int getHP();
-        void setMaxHP(int new_max);
-        void changeHP(int delta);
-
-        // Add item to inventory
-        void getItem(std::string);
-
-        // Equip an item
-        void equip(std::string item_name);
-
-        // Return whatever is equipped 
-        Item* getEquipped(std::string slot);
-
-        // Attacks
-        int swing();
-
     private:
-        int m_maxhp;
-        int m_hp;
-        std::map<std::string, int> m_attributes;
-        std::map<std::string, Item*> m_equipped;
-        std::map<std::string, int> m_inventory;
+        int hp_;
+        std::map<std::string, int> attributes_;
+        std::map<std::string, Item*> equipped_;
+        std::map<std::string, int> inventory_;
 };
 
 #endif

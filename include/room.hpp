@@ -22,7 +22,7 @@ class Room {
         int roomID_;
 
         std::size_t numItems();
-        void addItem(Item item);
+        void addItem(Item& item);
         LinkedList<Item>::ListIterator getItems();
         void showDescription();
 

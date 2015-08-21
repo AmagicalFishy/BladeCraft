@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1439314161 "/home/javi/Documents/VitaIndicium/BladeCraft/workflow/workflow.tex" "workflow.pdf" "workflow" 1439314162
+["pdflatex"] 1440122474 "/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/workflow.tex" "workflow.pdf" "workflow" 1440122474
   "/etc/texmf/web2c/texmf.cnf" 1408056343 838 1a7f35fa13839e48fb114eb1d6de2cf3 ""
-  "/home/javi/Documents/VitaIndicium/BladeCraft/workflow/workflow.tex" 1439314161 2379 accc184e45fb7c0a0e6bc6457e48d333 ""
+  "/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/workflow.tex" 1440122473 3294 fe565917fe78c84d702b669a15ff4149 ""
   "/home/javi/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1288312291 1006 b103be0bfc8c1682ff1fa9760697a329 ""
   "/home/javi/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1393459310 42678 ea82fd948b4303ce6a2c8e25d5e8f8aa ""
   "/home/javi/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex" 1393459310 19287 b2041c22301def2360f03c004d16068d ""
@@ -76,6 +76,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -113,9 +114,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1392645748 31083 1dfd8bf685ce0009c40532fedf8a7c53 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1411598713 127797 1e05301d64c94d4188a421b75b195c25 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1407817337 722335 1cbf1f8ff61385c191b7361978d7b52b ""
-  "workflow.aux" 1439314162 29 b8ab16155f6cf9af59b7d3584e538494 ""
-  "workflow.tex" 1439314161 2379 accc184e45fb7c0a0e6bc6457e48d333 ""
+  "workflow.aux" 1440122474 29 b8ab16155f6cf9af59b7d3584e538494 ""
+  "workflow.tex" 1440122473 3294 fe565917fe78c84d702b669a15ff4149 ""
   (generated)
-  "workflow.log"
-  "workflow.aux"
   "workflow.pdf"
+  "workflow.aux"
+  "workflow.log"

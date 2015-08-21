@@ -1,11 +1,14 @@
 //====================
 // Include Guard
-#ifndef __CHARACTER_HPP_INCLUDED__
-#define __CHARACTER_HPP_INCLUDED__ 
+#ifndef __SOUL_HPP_INCLUDED__
+#define __SOUL_HPP_INCLUDED__ 
 
 //====================
 // Forward declared dependencies
+//
+class World;
 class Item;
+class AttackType;
 
 //====================
 // Included dependencies
@@ -14,17 +17,21 @@ class Item;
 
 //====================
 // Class
-class Character 
+class Soul
 {
     public:
-        // Constructor
-        Character();
-
+        Soul();
+        Soul* target_;
+        void deltaHP(signed int change);
+        void weakAttack();
+    
     private:
-        int hp_;
+        World& theWorld_;
+        int maxHP_;
         std::map<std::string, int> attributes_;
-        std::map<std::string, Item*> equipped_;
-        std::map<std::string, int> inventory_;
+        std::array<Item*, 25> inventory_;
+
+
 };
 
 #endif

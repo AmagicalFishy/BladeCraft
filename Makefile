@@ -8,7 +8,7 @@ SDIR = src
 _DEPS = linkedlist.h
 DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
 
-_OBJ = main.o character.o item.o actionmode.o commandmode.o room.o
+_OBJ = main.o soul.o item.o actionmode.o commandmode.o room.o
 OBJ = $(patsubst %, $(ODIR)/%, $(_OBJ))
 
 BladeCraft: $(OBJ) 
@@ -24,5 +24,6 @@ $(ODIR):
 
 clean:
 	rm -f $(ODIR)/*.o core 
+	rm -f debug/core
 	rm -rf build
 	rm -f BladeCraft

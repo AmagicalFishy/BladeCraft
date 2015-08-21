@@ -53,6 +53,7 @@ swing, medium swing, heavy swing, parry, guard, special
 
 \bigskip
 \bigskip
+
 \hline 
 
 \subsection*{Ideas}
@@ -69,6 +70,31 @@ swing, medium swing, heavy swing, parry, guard, special
         whole world built around it; it doesn't consist of just the
         tower-dungeon).
     \item Play some .Hack and see how that combat is.
+    \item No one can see each other's level, equipment, etc.  
+        explicitely (only how it looks, how strong a person is, etc.)
+    \item NEURO: Concentrate for special attack. Black and white.  
+        Soothing voice: "Breath..." Everything around silences.
+
 
 \end{itemize}
+
+\subsection*{Game Engine Logic}
+\subsubsection*{Attack}
+\begin{tikzcd}
+    \text{Soul::attack()} \ar[r, "1"] & \text{world::process()} &
+    \text{Soul::defend()} \ar [l, "2"]\\
+    \text{abilities and buffs} \ar[ur, "1"]
+\end{tikzcd}
+\begin{enumerate} 
+    \item Soul has member `target' and member object `stats'.  
+        References to these members are sent to the world, along with 
+        desired ability. Target is const reference to target.
+
+    \item World checks, first, to see if the ability is in Soul's
+        ability list. If so, it applies ability's damage modifiers.
+
+    \item World calculates 'pure damage' using soul1 stuff. It calculates "pure defense" 
+
+\end{enumerate}
+
 \end{document}

@@ -9,8 +9,8 @@
 //====================
 // Included dependencies
 
-// Character related
-#include <character.hpp>
+// Soul related
+#include <soul.hpp>
 
 // Item related
 #include <item.hpp>

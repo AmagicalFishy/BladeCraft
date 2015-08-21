@@ -1,7 +1,7 @@
 //====================
 // Include Guard
-#ifndef __HEADERLIST_HPP__
-#define __HEADERLIST_HPP__
+#ifndef HEADERLIST_HPP
+#define HEADERLIST_HPP
 
 //====================
 // Forward declared dependencies

@@ -1,18 +1,18 @@
-//====================
-// Include Guard
-#ifndef __ATTACKHANDLERS_HPP_INCLUDED__
-#define __ATTACKHANDLERS_HPP_INCLUDED__ 
+#include "attackhandlers.hpp"
+#include "attacktypes.hpp"
+#include "soul.hpp"
 
-//====================
-// Forward declared dependencies
-//
-class Soul;
+void AttackHandlers::doAttack(Soul* attacker, Soul* defender, 
+        Attack attackParams) {
+    const std::map<std::string, int>* offense;
+    offense = attacker->getAttributes();
 
-//====================
-// Included dependencies
-#include <map>
-#include <string>
+    const std::map<std::string, int>* defense;
+    defense = defender->getAttributes();
 
-//====================
-// Class
+    int damage = 4;
+        //offense["Str"]*attackParams.damageModifier_ - 
+        //defense["Def"];
 
+    defender->deltaHP(damage);
+}

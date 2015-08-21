@@ -1,7 +1,7 @@
 //====================
 // Include Guard
-#ifndef __ACTIONMODE_HPP_INCLUDED__
-#define __ACTIONMODE_HPP_INCLUDED__
+#ifndef ACTIONMODE_HPP_INCLUDED
+#define ACTIONMODE_HPP_INCLUDED
 
 //====================
 // Forward declared dependencies

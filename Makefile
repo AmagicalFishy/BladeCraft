@@ -8,7 +8,8 @@ SDIR = src
 _DEPS = linkedlist.h
 DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
 
-_OBJ = main.o soul.o item.o actionmode.o commandmode.o room.o
+_OBJ = main.o soul.o item.o actionmode.o commandmode.o room.o world.o\
+	   attacktypes.o attackhandlers.o
 OBJ = $(patsubst %, $(ODIR)/%, $(_OBJ))
 
 BladeCraft: $(OBJ) 

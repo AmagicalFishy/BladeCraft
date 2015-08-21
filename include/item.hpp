@@ -1,7 +1,7 @@
 //====================
 // Include Guard
-#ifndef __ITEM_HPP_INCLUDED__
-#define __ITEM_HPP_INCLUDED__
+#ifndef ITEM_HPP_INCLUDED
+#define ITEM_HPP_INCLUDED
 
 //====================
 // Forward declared dependencies

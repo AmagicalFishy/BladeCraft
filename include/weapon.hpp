@@ -1,7 +1,7 @@
 //====================
 // Include Guard
-#ifndef __WEAPON_H_INCLUDED__
-#define __WEAPON_H_INCLUDED__
+#ifndef WEAPON_H_INCLUDED
+#define WEAPON_H_INCLUDED
 
 //====================
 // Included dependencies

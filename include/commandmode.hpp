@@ -1,7 +1,7 @@
 //====================
 // Include Guard
-#ifndef __COMMANDMODE_HPP_INCLUDED__
-#define __COMMANDMODE_HPP_INCLUDED__
+#ifndef COMMANDMODE_HPP_INCLUDED
+#define COMMANDMODE_HPP_INCLUDED
 
 //====================
 // Forward declared dependencies

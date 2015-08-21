@@ -1,14 +1,28 @@
-#include "world.hpp"
+//====================
+// Include Guard
+#ifndef WORLD_HPP_INCLUDED
+#define WORLD_HPP_INCLUDED
 
-World::World() : attackTypeLink_(new AttackType;) {}
-World::~World() { 
-    delete attackTypeLink;
-}
+//====================
+// Forward declared dependencies
 
-World::processAttack(Soul* attacker, Soul* target, 
-        AttackType attackType) {
-    attackHandler = AttackHandlers->get(attacker, target, attackType);
-    if (attackHandler) { 
-        attackHandler.doAttack();
-    }
-}
+
+class Soul;
+class Attack;
+
+//====================
+// Included dependencies
+
+//====================
+// Class
+class World {
+    public:
+        void processAttack(Soul* attacker, Soul* target, 
+                Attack attackType);
+
+    private:
+
+};
+
+#endif
+  

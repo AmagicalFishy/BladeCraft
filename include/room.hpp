@@ -1,7 +1,7 @@
 //====================
 // Include Guard
-#ifndef __ROOM_HPP_INCLUDED__
-#define __ROOM_HPP_INCLUDED__ 
+#ifndef ROOM_HPP_INCLUDED
+#define ROOM_HPP_INCLUDED
 
 //====================
 // Forward declared dependencies

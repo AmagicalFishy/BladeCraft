@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.12)  20 AUG 2015 22:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.12)  22 AUG 2015 23:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/workflow.tex
-(/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/workflow.tex
+**/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex
+(/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -302,8 +302,8 @@ File: pgflibraryarrows.meta.code.tex 2013/12/13 v3.0.0 (rcs-revision 1.12)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks32
-) (./workflow.aux)
-\openout1 = `workflow.aux'.
+) (./ideas.aux)
+\openout1 = `ideas.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -377,7 +377,7 @@ Overfull \hbox (25.72244pt too wide) detected at line 19
 [][]
  []
 
-/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/workflow.tex:57: Misplaced \noalign.
+/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex:57: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
 l.57 \hline
@@ -387,17 +387,17 @@ an alignment. Proceed, and I'll ignore this case.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./workflow.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./ideas.aux) ) 
 Here is how much of TeX's memory you used:
  12982 strings out of 495028
- 268834 string characters out of 6181497
+ 268825 string characters out of 6181497
  300004 words of memory out of 5000000
  15960 multiletter control sequences out of 15000+600000
  5353 words of font info for 20 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 61i,16n,84p,532b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,16n,84p,535b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on workflow.pdf (2 pages, 75666 bytes).
+Output written on ideas.pdf (2 pages, 75703 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream

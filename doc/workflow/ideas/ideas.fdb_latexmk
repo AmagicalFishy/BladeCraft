@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1440122474 "/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/workflow.tex" "workflow.pdf" "workflow" 1440122474
+["pdflatex"] 1440299411 "/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex" "ideas.pdf" "ideas" 1440299412
   "/etc/texmf/web2c/texmf.cnf" 1408056343 838 1a7f35fa13839e48fb114eb1d6de2cf3 ""
-  "/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/workflow.tex" 1440122473 3294 fe565917fe78c84d702b669a15ff4149 ""
+  "/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex" 1440122644 3342 c2ec954fd43eb5cfed4d3f383ecca962 ""
   "/home/javi/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1288312291 1006 b103be0bfc8c1682ff1fa9760697a329 ""
   "/home/javi/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1393459310 42678 ea82fd948b4303ce6a2c8e25d5e8f8aa ""
   "/home/javi/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex" 1393459310 19287 b2041c22301def2360f03c004d16068d ""
@@ -114,9 +114,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1392645748 31083 1dfd8bf685ce0009c40532fedf8a7c53 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1411598713 127797 1e05301d64c94d4188a421b75b195c25 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1407817337 722335 1cbf1f8ff61385c191b7361978d7b52b ""
-  "workflow.aux" 1440122474 29 b8ab16155f6cf9af59b7d3584e538494 ""
-  "workflow.tex" 1440122473 3294 fe565917fe78c84d702b669a15ff4149 ""
+  "ideas.aux" 1440299411 29 b8ab16155f6cf9af59b7d3584e538494 ""
+  "ideas.tex" 1440122644 3342 c2ec954fd43eb5cfed4d3f383ecca962 ""
   (generated)
-  "workflow.pdf"
-  "workflow.aux"
-  "workflow.log"
+  "ideas.pdf"
+  "ideas.aux"
+  "ideas.log"

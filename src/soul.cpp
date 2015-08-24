@@ -1,27 +1,27 @@
+#include "attacks.hpp"
 #include "soul.hpp"
 #include "world.hpp"
-#include "attacktypes.hpp"
 
-// Constructor
-Soul::Soul(World* world) 
-: target_(nullptr), maxHP_(100), theWorld_(world) {
-    attributes_["HP"] = maxHP_;
-    attributes_["Str"] = 3;
-    attributes_["Def"] = 3;
+Soul::Soul() : HP_(100), maxHP_(100) { 
+    attributes_["str"] = 5;
+    attributes_["def"] = 3;
 }
 
-void Soul::target(Soul* newTarget) { target_ = newTarget; }
-
-const std::map<std::string, int>* Soul::getAttributes() { 
-    return &(attributes_); 
+Soul::Soul(World* currentWorld) : Soul() { 
+    currentWorld_ = currentWorld;
 }
 
-void Soul::deltaHP(signed int change) { 
-    attributes_["HP"] += change;
+void Soul::setWorld(World* currentWorld) { 
+    currentWorld_ = currentWorld;
+}
+
+void Soul::setTarget(Soul* target) { target_ = target; }
+
+int Soul::getAttribute(std::string attribute) { 
+    return attributes_[attribute]; 
 }
 
 void Soul::weakAttack() { 
-    theWorld_->processAttack(this, target_, 
-            AttackType::meleeAttack("weak"));
+    Attacks::Attack* weakAttck = new Attacks::Attack(this, .75); 
+    currentWorld_->regAttack(this, this->target_, weakAttck);
 }
-

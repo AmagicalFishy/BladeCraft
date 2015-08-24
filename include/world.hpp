@@ -6,22 +6,30 @@
 //====================
 // Forward declared dependencies
 
-
 class Soul;
-class Attack;
 
 //====================
 // Included dependencies
+#include <queue>
+#include <tuple>
+#include "attacks.hpp"
+#include "handlers.hpp"
+#include "notifiers.hpp"
 
 //====================
 // Class
 class World {
     public:
-        void processAttack(Soul* attacker, Soul* target, 
-                Attack attackType);
+        World();
+        void regAttack(Soul* attacker, Soul* target, \
+                Attacks::Attack* attack);
+
+        CombatNotifier combatNotifier_;
+        AttackHandler attackHandler_;
 
     private:
-
+        friend AttackHandler;
+        std::queue< std::tuple<Soul*, Soul*, Attacks::Attack*> > combatEvents_;
 };
 
 #endif

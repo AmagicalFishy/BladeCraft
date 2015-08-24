@@ -9,18 +9,16 @@
 //====================
 // Included dependencies
 
-// Soul related
-#include <soul.hpp>
+#include "attacks.hpp"
+#include "handlers.hpp"
+#include "notifiers.hpp"
+#include "soul.hpp"
+#include "world.hpp"
 
-// Item related
-#include <item.hpp>
+//#include <item.hpp>
 
-// Room related
-#include <room.hpp>
+//#include <room.hpp>
 
-// Interface related
-#include <actionmode.hpp>
-#include <commandmode.hpp>
 #endif
 
 

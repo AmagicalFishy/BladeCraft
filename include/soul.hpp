@@ -5,35 +5,29 @@
 
 //====================
 // Forward declared dependencies
-//
-
 class World;
-class Item;
 
 //====================
 // Included dependencies
 #include <map>
-#include <string>
 
 //====================
 // Class
-class Soul
-{
+class Soul {
     public:
-        Soul(World* world);
-        Soul* target_;
-        const std::map<std::string, int>* getAttributes();
-        void target(Soul* newTarget);
-        void deltaHP(signed int change);
+        Soul();
+        Soul(World* currentWorld); 
+        void setWorld(World* currentWorld); 
+        void setTarget(Soul* target);
+        int getAttribute(std::string attribute);
         void weakAttack();
-        std::map<std::string, int> attributes_;
-    
+        int HP_;
+
     private:
-        int maxHP_;
-        World* theWorld_;
-        std::array<Item*, 25> inventory_;
-
-
+        int maxHP_; 
+        World* currentWorld_;
+        Soul* target_;
+        std::map<std::string, int> attributes_;
 };
 
 #endif

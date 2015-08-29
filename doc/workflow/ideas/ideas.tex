@@ -21,7 +21,7 @@
 \subsection*{Descriptions}
 \textbf{Item:} Has data members durability, weight, weight-distribution, flexibility, 
 
-\subsubsection*{Forward Declared Dependencies}
+\subsubsection*{Item Ideas}
 \begin{enumerate}
     \item \textbf{Info:} Contains external description of item. This
     includes how it looks, size, and volume-type. Size and volume type
@@ -37,7 +37,7 @@
     one it's used on.
 \end{enumerate}
 
-\subsubsection*{Child Classes (Dependants in which `Item' is Included)}
+\subsubsection*{Potential Composition modules for item }
 \begin{enumerate}
     \item \textbf{Weapon:} Has data members damage-type.
 
@@ -62,9 +62,11 @@ swing, medium swing, heavy swing, parry, guard, special
         \begin{itemize}
             \item Step forward when swing (using attacks as movement)
             \item Fast-paced
+            \item Somewhat long-ranged melee weapons
+            \item Every attack is "premeditated"
         \end{itemize}
     \item Environment/tiles/depth like MineCraft
-    \item Graphics like Final Fantasy Tactics (maybe taller)
+    \item Graphics like Final Fantasy Tactics (maybe taller; maybe more like FF9)
     \item Card Game like FF8 or FF9
     \item A primary tower-dungeon like Sword Art Online (but with a 
         whole world built around it; it doesn't consist of just the
@@ -77,24 +79,5 @@ swing, medium swing, heavy swing, parry, guard, special
 
 
 \end{itemize}
-
-\subsection*{Game Engine Logic}
-\subsubsection*{Attack}
-\begin{tikzcd}
-    \text{Soul::attack()} \ar[r, "1"] & \text{world::process()} &
-    \text{Soul::defend()} \ar [l, "2"]\\
-    \text{abilities and buffs} \ar[ur, "1"]
-\end{tikzcd}
-\begin{enumerate} 
-    \item Soul has member `target' and member object `stats'.  
-        References to these members are sent to the world, along with 
-        desired ability. Target is const reference to target.
-
-    \item World checks, first, to see if the ability is in Soul's
-        ability list. If so, it applies ability's damage modifiers.
-
-    \item World calculates 'pure damage' using soul1 stuff. It calculates "pure defense" 
-
-\end{enumerate}
 
 \end{document}

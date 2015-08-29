@@ -5,29 +5,43 @@
 
 //====================
 // Forward declared dependencies
+class InfoModule;
 class Item;
+class MovementHandler;
+class Soul;
 
 //====================
 // Included dependencies
-#include "linkedlist.hpp"
-#include "item.hpp"
+#include <set>
+#include <string>
+#include <map>
 
 //====================
 // Class
 class Room {
     public:
-        Room();
-
         static int roomSerialCounter; // Counter of room serial numbers
-        int roomID_;
 
-        std::size_t numItems();
-        void addItem(Item& item);
-        LinkedList<Item>::ListIterator getItems();
-        void showDescription();
+        Room();
+        ~Room();
+        void initialize(std::string type, std::string name,
+                std::string description);
+        InfoModule* getInfo();
+        void insert(Soul* soul);
+        void insert(Item* item);
+        void remove(Soul* soul);
+        void remove(Item* item);
+        void link(Room* toLink, std::string direction);
+        Room* getRoom(std::string direction);
 
-        LinkedList<Item> itemsInThisRoom_;
+
     private:
+        friend MovementHandler;
+        std::map<std::string, Room*> linkedRooms_;
+        std::set<Soul*> soulsInRoom_;
+        std::set<Item*> itemsInRoom_;
+        InfoModule* info_;
+        int ID_;
 };
         
 #endif

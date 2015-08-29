@@ -1,24 +1,37 @@
 #include "item.hpp"
+#include "room.hpp"
+#include "info.hpp"
 #include <iostream>
 
 // Unique ID key for every item
 int Item::itemSerialCounter = 0;
 
-// Constructors
-Item::Item() { 
-    uniqueID_ = itemSerialCounter++;
-    enhancements_["Str"] = 0;
-    enhancements_["Def"] = 0;
-};
-Item::Item(std::string name) : Item::Item() { name_ = name; };
-Item::Item(std::string name, std::array<int, 2> stats)
-: Item::Item(name) {
-    enhancements_["Str"] = stats[0];
-    enhancements_["Def"] = stats[1];
-};
+Item::Item(Room* currentRoom) { 
+    ID_ = itemSerialCounter;
+    ++itemSerialCounter;
+    currentRoom->insert(this);
+}
 
-// Return unique item ID
-int Item::getID() { return uniqueID_; }
+Item::~Item() { delete info_; }
 
-// Return map of stats
-std::map<std::string, int> Item::getStats() { return enhancements_; };
+void Item::initialize(std::string type, std::string name,
+                std::string description) { 
+    info_ = new InfoModule(ID_, type, name, description);
+}
+
+InfoModule* Item::getInfo() { return info_; }
+
+// Equipment
+Equipment::Equipment(std::string equippedSlot, Room* currentRoom)
+: Item(currentRoom) { 
+    isEquipped_ = false;
+    equippedSlot_ = equippedSlot;
+    additionalAttributes_["str"] = 0;
+    additionalAttributes_["def"] = 0;
+}
+
+void Equipment::setAttribute(std::string attribute, int amount) {
+    additionalAttributes_[attribute] = amount;
+}
+
+

@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
 
 \begin{document}
 
@@ -8,13 +10,45 @@
     \item Start from the beginning and work towards the end
 \end{itemize}
 
-\subsubsection*{Soul}
+\hline
 
 \begin{enumerate}
     \item Differentiate between playable characters and NPCs (why?
         so NPCs can have an AI module, drop-treasure module, boss,
         etc., but are ultimately the same)
-    \item Implement a system where one soul can attack another soul.
+    \item Implement a system where one soul can attack another soul. \checkmark
+    \item Implement Soul death
+    \item Create a good damage/defense formula (for use with abilities!)
+    \item Implement items / equippables (using composition) \checkmark
+    \item Implement inventory system \checkmark
+    \item \sout{Look into event handling for keyboard presses}
+    \item \sout{Rewrite linked list implementation for rooms as STL compatible}
+    \item Implement rooms \checkmark
+    \item Implement item notifier/handler \checkmark
+    \item Implement information modules for rooms, items, and characters \checkmark
+    \item Add some kind of sensible item-hierarchy system \checkmark
+    \item Fix item system \checkmark
+    \item Flesh out the slots for equipping something
 \end{enumerate}
+
+\subsubsection*{Details}
+\begin{enumerate}
+    \item Un-protect ``equipment" in item.cpp
+    \item Prevent soul from targetting itself
+    \item Prevent notifier from notifying if registered listeners is empty
+    \item Prevent item from being equipped by more than one soul
+    \item Implement max-size for inventory
+    \item Ensure no new keys can be added in any of the maps
+    \item Ensure no two items can be picked up by the same Soul
+    \item Add a nullptr check for linked rooms. Respond with something
+        like ``You can't move in this direction!" \checkmark
+    \item Error-catching for items dropped that are not in the inventory
+    \item Items and souls \textbf{have} to be in a room. \checkmark
+    \item Ensure rooms, items, and souls are initialized so that seg
+        fault doesn't occur when soul enters room that doesn't have
+        info
+    \item Make everything const
+\end{enumerate}
+
 
 \end{document}

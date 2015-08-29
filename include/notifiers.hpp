@@ -26,11 +26,8 @@ class Notifier {
         std::set<Handler*> registeredHandlers_;
 };
 
-class CombatNotifier : public Notifier {
-    private:
-        Soul* attacker;
-        Soul* defender;
-        Attack* attack; 
-};
+class CombatNotifier : public Notifier {};
+class MovementNotifier : public Notifier {};
+class ItemNotifier : public Notifier {};
 
 #endif

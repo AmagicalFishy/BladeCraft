@@ -8,17 +8,21 @@ SDIR = src
 _DEPS = linkedlist.h
 DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
 
-_OBJ = main.o soul.o world.o attacks.o handlers.o notifiers.o #item.o actionmode.o commandmode.o room.o
+_OBJ = main.o soul.o world.o attacks.o handlers.o notifiers.o item.o\
+	   room.o info.o
 OBJ = $(patsubst %, $(ODIR)/%, $(_OBJ))
 
-BladeCraft: $(OBJ) 
-	$(CPP) -o $@ $^ $(CFLAGS)
+all: $(ODIR) BladeCraft
 
-$(ODIR)/%.o: $(SDIR)/%.cpp $(LDIR) $(ODIR)
-	$(CPP) -c -o $@ $< $(CFLAGS)
-
-$(ODIR):
+$(ODIR): 
 	mkdir -p $@
+
+BladeCraft: $(OBJ)
+	$(CPP) $^ $(CFLAGS) -o $@
+
+$(ODIR)/%.o: $(SDIR)/%.cpp
+	$(CPP) -c $< $(CFLAGS) -o $@
+
 
 .PHONY: clean
 

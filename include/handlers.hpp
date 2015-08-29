@@ -18,7 +18,7 @@ class World;
 class Handler {
     public:
         Handler(World* currentWorld);
-        virtual void recieveNotification();
+        virtual void recieveNotification() = 0;
         void watchNotifier(Notifier* toWatch);
         void unwatchNotifier(Notifier* toUnwatch);
 
@@ -31,6 +31,18 @@ class Handler {
 class AttackHandler : public Handler {
     public:
         AttackHandler(World* currentWorld);
+        void recieveNotification();
+};
+
+class MovementHandler : public Handler { 
+    public:
+        MovementHandler(World* currentWorld);
+        void recieveNotification();
+};
+
+class ItemHandler : public Handler {
+    public:
+        ItemHandler(World* currentWorld);
         void recieveNotification();
 };
 

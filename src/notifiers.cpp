@@ -19,6 +19,3 @@ void Notifier::regHandler(Handler* handler) {
 void Notifier::unregHandler(Handler* handler) {
     registeredHandlers_.erase(handler);
 }
-
-//====================
-// Combat Notifier

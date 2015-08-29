@@ -1,7 +1,7 @@
 //====================
 // Include Guard
-#ifndef __LINKEDLIST_HPP_INCLUDED__
-#define __LINKEDLIST_HPP_INCLUDED__
+#ifndef LINKEDLIST_HPP_INCLUDED
+#define LINKEDLIST_HPP_INCLUDED
 
 //===================
 // Included Dependencies

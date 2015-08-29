@@ -5,35 +5,44 @@
 
 //====================
 // Forward declared dependencies
-// class material;
+class Room;
+class InfoModule;
 
 //====================
 // Included dependencies
 #include <string>
-#include <array>
-#include <map>
+#include <unordered_map>
 
 //====================
-// Classes
-
+// Item Superclass
 class Item {
     public: 
         static int itemSerialCounter;
-        Item();
-        Item(std::string name);
-        Item(std::string name, std::array<int, 2> stats);
-
-        int getID();
-        std::map<std::string, int> getStats();
-
-        std::string name_;
+        Item(Room* currentRoom);
+        ~Item();
+        void initialize(std::string type, std::string name,
+                std::string description);
+        InfoModule* getInfo(); 
 
     private:
-        int uniqueID_;
-        int itemID_;
-        std::map<std::string, int> enhancements_;
-
+        Item();
+        InfoModule* info_;
+        int ID_;
 };
+
+// Equipment subclass
+class Equipment : public Item {
+    public:
+        Equipment(std::string equippedSlot, Room* currentRoom);
+        void setAttribute(std::string attribute, int amount);
+        bool isEquipped_;
+
+        std::string equippedSlot_;
+        std::unordered_map<std::string, int> additionalAttributes_;
+
+    private:
+};
+
 
 #endif
 

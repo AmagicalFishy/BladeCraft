@@ -1,58 +1,127 @@
 #include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <cstdio>
 #include "headers.hpp"
+#include "rapidjson/document.h"
+#include "rapidjson/filereadstream.h"
 
 int main() {
+    // Create the World and the player's character (Soul)
     World* theWorld = new World;
-    Room* firstRoom = new Room;
-    Room*  secondRoom = new Room;
+        
+    // Create all rooms
+    std::unordered_map<std::string, Room*> rooms;
+    FILE* roomFile = fopen("database/rooms.json", "r");
+    char buffer[65536];
+    rapidjson::FileReadStream roomStream(roomFile, 
+            buffer, sizeof(buffer));
+    rapidjson::Document allRooms;
+    allRooms.ParseStream(roomStream);
 
-    firstRoom->link(secondRoom, "north");
-    firstRoom->initialize("room", "The bedroom of an Inn",
-            "This is a small, dimly lit, carpeted room."
-            "");
+    // Scroll through numbers and, if a room exists w/ that coord.,
+    // create it and initialize it with information
+    for (int ii = 0; ii <= 1; ++ii) { 
+    for (int jj = 0; jj <= 1; ++jj) { 
+    for (int kk = 0; kk <= 1; ++kk) { 
+        std::string roomCoordStr =  std::to_string(ii) + "." + 
+                                    std::to_string(jj) + "." +
+                                    std::to_string(kk);
+        const char* roomCoord = roomCoordStr.c_str();
+        if (allRooms.HasMember(roomCoord)) {
+                const rapidjson::Value& room = allRooms[roomCoord];
+                std::array<int, 3> id = {ii, jj, kk};
+                rooms[roomCoord] = new Room(id);
+                rooms[roomCoord]->initialize(
+                        "room", // The type of object is room
+                        room["name"].GetString(), 
+                        room["description"].GetString() 
+                        );
+        }
+    }
+    }
+    }
+    for (auto room = rooms.begin(); room != rooms.end(); ++room) {
+        std::cout << (*room).first << ": " << 
+        rooms[(*room).first]->getInfo()->getName() << '\n';
+    }
 
-    secondRoom->link(firstRoom, "south"); 
-    secondRoom->initialize("room", "The hallway in the Inn",
-            "Though sunlight shines through the windows, the Inn "
-            "itself is completely silent; your footsteps and the "
-            "creaking of the wood floor are its only sounds.");
+    std::cout << '\n';
+    // Link appropriate rooms
+    for (auto room = rooms.begin(); room != rooms.end(); ++room) {
+        std::array<int, 3> idArray = (*room).second->getID();
 
-    Equipment* sword = new Equipment("held", firstRoom);
-    sword->setAttribute("str", 10);
-    sword->setAttribute("def", 0);
-    sword->initialize("sword", "Longsword", "A long sword");
+        std::map<std::string, std::string> directions;
+        
+        std::string hereStr = 
+            std::to_string(idArray[0]) + "." +
+            std::to_string(idArray[1]) + "." + 
+            std::to_string(idArray[2]);
 
-    Equipment* shield = new Equipment("held", secondRoom);
-    shield->setAttribute("str", 0);
-    shield->setAttribute("def", 3);
-    shield->initialize("shield", "Wooden Shield", 
-            "A round, wooden shield");
+        const char* here = hereStr.c_str();
 
-    Equipment* armor = new Equipment("body", secondRoom);
-    armor->setAttribute("str", 0);
-    armor->setAttribute("def", 5);
-    armor->initialize("armor", "Armor", "The torso part of a suit of "
-            "armor");
+        std::string north = 
+            std::to_string(idArray[0]) + "." +
+            std::to_string(idArray[1] + 1) + "." + 
+            std::to_string(idArray[2]);
+        std::string east = 
+            std::to_string(idArray[0] + 1) + "." + 
+            std::to_string(idArray[1]) + "." + 
+            std::to_string(idArray[2]);
+        std::string south = 
+            std::to_string(idArray[0]) + "." + 
+            std::to_string(idArray[1] - 1) + "." + 
+            std::to_string(idArray[2]);
+        std::string west = 
+            std::to_string(idArray[0] - 1) + "." + 
+            std::to_string(idArray[1]) + "." + 
+            std::to_string(idArray[2]);
+        std::string up = 
+            std::to_string(idArray[0]) + "." + 
+            std::to_string(idArray[1]) + "." + 
+            std::to_string(idArray[2] + 1);
+        std::string down = 
+            std::to_string(idArray[0]) + "." + 
+            std::to_string(idArray[1]) + "." + 
+            std::to_string(idArray[2] - 1);
 
-    Equipment* helmet = new Equipment("helm", secondRoom);
-    helmet->setAttribute("str", 0);
-    helmet->setAttribute("def", 2);
-    helmet->initialize("helmet", "Leather Helmet", "A leather helmet");
+        directions["north"] =  north;
+        directions["east"] = east;
+        directions["south"] = south;
+        directions["west"] = west;
+        directions["up"] = up;
+        directions["down"] = down;
 
-    Soul* soulOne = new Soul(theWorld, firstRoom);
+        for (rapidjson::Value::ConstValueIterator linkItr = 
+                allRooms[here]["link"].Begin(); 
+                linkItr != allRooms[here]["link"].End(); 
+                ++linkItr) {
+            std::string dir = (*linkItr).GetString();
+            (*room).second->link( rooms[ directions[dir] ]->getRoom(), 
+                    dir );
 
-    std::string command;
+            std::cout << (*room).second->getInfo()->getName() << 
+                " linked to " << 
+                rooms[ directions[dir] ]->
+                    getInfo()->getName() << '\n';
+        }
+    }
+    
     bool runGame = true;
+    std::string command;
+    Soul* playerSoul = new Soul(theWorld, rooms["0.1.1"]->getRoom());
+    playerSoul->move("south");
 
     while (runGame == true) { 
-        std::cout << "Command: ";
-        std::cin >> command; 
 
-        if (command == "-1") { break; }
-        if (command == "n") { soulOne->move("north"); }
-        if (command == "s") { soulOne->move("south"); }
-        if (command == "w") { soulOne->move("west"); }
-        if (command == "e") { soulOne->move("east"); }
+        std::cout << BOLDWHITE << "Command: " << BLUE;
+        std::getline(std::cin, command);
+        std::cout << RESET;
+        
+        runGame = Commands::parseCommand(playerSoul, command);
+
+        std::cout << RED << "HP: " << RESET << playerSoul->HP_ << "\n";
     };
 
     return 0;

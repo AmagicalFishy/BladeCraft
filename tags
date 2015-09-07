@@ -1,0 +1,264 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ATTACKS_HPP_INCLUDED	include/attacks.hpp	4;"	d
+Attack	include/attacks.hpp	/^            Attack(Soul* attacker, float damageMultiplier);$/;"	p	class:Attacks::Attack	access:public	signature:(Soul* attacker, float damageMultiplier)
+Attack	include/attacks.hpp	/^    class Attack {$/;"	c	namespace:Attacks
+AttackHandler	include/handlers.hpp	/^        AttackHandler(World* currentWorld);$/;"	p	class:AttackHandler	access:public	signature:(World* currentWorld)
+AttackHandler	include/handlers.hpp	/^class AttackHandler : public Handler {$/;"	c	inherits:Handler
+AttackHandler::AttackHandler	include/handlers.hpp	/^        AttackHandler(World* currentWorld);$/;"	p	class:AttackHandler	access:public	signature:(World* currentWorld)
+AttackHandler::recieveNotification	include/handlers.hpp	/^        void recieveNotification();$/;"	p	class:AttackHandler	access:public	signature:()
+Attacks	include/attacks.hpp	/^namespace Attacks {$/;"	n
+Attacks::Attack	include/attacks.hpp	/^    class Attack {$/;"	c	namespace:Attacks
+Attacks::Attack::Attack	include/attacks.hpp	/^            Attack(Soul* attacker, float damageMultiplier);$/;"	p	class:Attacks::Attack	access:public	signature:(Soul* attacker, float damageMultiplier)
+Attacks::Attack::damage_	include/attacks.hpp	/^            int damage_;$/;"	m	class:Attacks::Attack	access:private
+Attacks::Attack::getDamage	include/attacks.hpp	/^            int getDamage();$/;"	p	class:Attacks::Attack	access:public	signature:()
+BLACK	include/headers.hpp	9;"	d
+BLUE	include/headers.hpp	13;"	d
+BOLDBLACK	include/headers.hpp	17;"	d
+BOLDBLUE	include/headers.hpp	21;"	d
+BOLDCYAN	include/headers.hpp	23;"	d
+BOLDGREEN	include/headers.hpp	19;"	d
+BOLDMAGENTA	include/headers.hpp	22;"	d
+BOLDRED	include/headers.hpp	18;"	d
+BOLDWHITE	include/headers.hpp	24;"	d
+BOLDYELLOW	include/headers.hpp	20;"	d
+COMMAND_HPP_INCLUDED	include/command.hpp	4;"	d
+CYAN	include/headers.hpp	15;"	d
+CombatNotifier	include/notifiers.hpp	/^class CombatNotifier : public Notifier {};$/;"	c	inherits:Notifier
+Commands	include/command.hpp	/^namespace Commands {$/;"	n
+Commands::fetchObject	include/command.hpp	/^    template<typename T> T* fetchObject(std::string name, $/;"	p	namespace:Commands	signature:(std::string name, std::set<T*> objectSet)
+Commands::parseCommand	include/command.hpp	/^    bool parseCommand(Soul* playerSoul, std::string command);  $/;"	p	namespace:Commands	signature:(Soul* playerSoul, std::string command)
+Commands::split	include/command.hpp	/^    std::vector<std::string> split(const std::string command, $/;"	p	namespace:Commands	signature:(const std::string command, char delimiter)
+Equipment	include/item.hpp	/^        Equipment(std::string equippedSlot, Room* currentRoom);$/;"	p	class:Equipment	access:public	signature:(std::string equippedSlot, Room* currentRoom)
+Equipment	include/item.hpp	/^class Equipment : public Item {$/;"	c	inherits:Item
+Equipment::Equipment	include/item.hpp	/^        Equipment(std::string equippedSlot, Room* currentRoom);$/;"	p	class:Equipment	access:public	signature:(std::string equippedSlot, Room* currentRoom)
+Equipment::additionalAttributes_	include/item.hpp	/^        std::unordered_map<std::string, int> additionalAttributes_;$/;"	m	class:Equipment	access:public
+Equipment::equippedSlot_	include/item.hpp	/^        std::string equippedSlot_;$/;"	m	class:Equipment	access:public
+Equipment::isEquipped_	include/item.hpp	/^        bool isEquipped_;$/;"	m	class:Equipment	access:public
+Equipment::setAttribute	include/item.hpp	/^        void setAttribute(std::string attribute, int amount);$/;"	p	class:Equipment	access:public	signature:(std::string attribute, int amount)
+GREEN	include/headers.hpp	11;"	d
+HANDLERS_HPP_INCLUDED	include/handlers.hpp	4;"	d
+HEADERLIST_HPP	include/headers.hpp	4;"	d
+HP_	include/soul.hpp	/^        int HP_;$/;"	m	class:Soul	access:public
+Handler	include/handlers.hpp	/^        Handler(World* currentWorld);$/;"	p	class:Handler	access:public	signature:(World* currentWorld)
+Handler	include/handlers.hpp	/^class Handler {$/;"	c
+Handler::Handler	include/handlers.hpp	/^        Handler(World* currentWorld);$/;"	p	class:Handler	access:public	signature:(World* currentWorld)
+Handler::currentWorld_	include/handlers.hpp	/^        World* currentWorld_;$/;"	m	class:Handler	access:protected
+Handler::recieveNotification	include/handlers.hpp	/^        virtual void recieveNotification() = 0;$/;"	p	class:Handler	access:public	signature:()
+Handler::unwatchNotifier	include/handlers.hpp	/^        void unwatchNotifier(Notifier* toUnwatch);$/;"	p	class:Handler	access:public	signature:(Notifier* toUnwatch)
+Handler::watchNotifier	include/handlers.hpp	/^        void watchNotifier(Notifier* toWatch);$/;"	p	class:Handler	access:public	signature:(Notifier* toWatch)
+Handler::watching_	include/handlers.hpp	/^        Notifier* watching_;$/;"	m	class:Handler	access:protected
+ID_	include/info.hpp	/^        int ID_;$/;"	m	class:InfoModule	access:private
+ID_	include/item.hpp	/^        int ID_;$/;"	m	class:Item	access:private
+ID_	include/room.hpp	/^        int ID_;$/;"	m	class:Room	access:private
+ID_	include/soul.hpp	/^        int ID_; $/;"	m	class:Soul	access:private
+INFO_HPP_INCLUDED	include/info.hpp	4;"	d
+ITEM_HPP_INCLUDED	include/item.hpp	4;"	d
+InfoModule	include/info.hpp	/^        InfoModule(int ID, std::string type, std::string name,$/;"	p	class:InfoModule	access:public	signature:(int ID, std::string type, std::string name, std::string description)
+InfoModule	include/info.hpp	/^        InfoModule(int ID, std::string type, std::string name,$/;"	p	class:InfoModule	access:public	signature:(int ID, std::string type, std::string name, std::string description, std::string display)
+InfoModule	include/info.hpp	/^class InfoModule {$/;"	c
+InfoModule::ID_	include/info.hpp	/^        int ID_;$/;"	m	class:InfoModule	access:private
+InfoModule::InfoModule	include/info.hpp	/^        InfoModule(int ID, std::string type, std::string name,$/;"	p	class:InfoModule	access:public	signature:(int ID, std::string type, std::string name, std::string description)
+InfoModule::InfoModule	include/info.hpp	/^        InfoModule(int ID, std::string type, std::string name,$/;"	p	class:InfoModule	access:public	signature:(int ID, std::string type, std::string name, std::string description, std::string display)
+InfoModule::description_	include/info.hpp	/^        std::string description_;$/;"	m	class:InfoModule	access:private
+InfoModule::display_	include/info.hpp	/^        std::string display_;$/;"	m	class:InfoModule	access:private
+InfoModule::getDescription	include/info.hpp	/^        std::string getDescription();$/;"	p	class:InfoModule	access:public	signature:()
+InfoModule::getID	include/info.hpp	/^        int getID();$/;"	p	class:InfoModule	access:public	signature:()
+InfoModule::getName	include/info.hpp	/^        std::string getName();$/;"	p	class:InfoModule	access:public	signature:()
+InfoModule::getType	include/info.hpp	/^        std::string getType();$/;"	p	class:InfoModule	access:public	signature:()
+InfoModule::name_	include/info.hpp	/^        std::string name_;$/;"	m	class:InfoModule	access:private
+InfoModule::type_	include/info.hpp	/^        std::string type_;$/;"	m	class:InfoModule	access:private
+Item	include/item.hpp	/^        Item();$/;"	p	class:Item	access:private	signature:()
+Item	include/item.hpp	/^        Item(Room* currentRoom);$/;"	p	class:Item	access:public	signature:(Room* currentRoom)
+Item	include/item.hpp	/^class Item {$/;"	c
+Item::ID_	include/item.hpp	/^        int ID_;$/;"	m	class:Item	access:private
+Item::Item	include/item.hpp	/^        Item();$/;"	p	class:Item	access:private	signature:()
+Item::Item	include/item.hpp	/^        Item(Room* currentRoom);$/;"	p	class:Item	access:public	signature:(Room* currentRoom)
+Item::getInfo	include/item.hpp	/^        InfoModule* getInfo(); $/;"	p	class:Item	access:public	signature:()
+Item::info_	include/item.hpp	/^        InfoModule* info_;$/;"	m	class:Item	access:private
+Item::initialize	include/item.hpp	/^        void initialize(std::string type, std::string name,$/;"	p	class:Item	access:public	signature:(std::string type, std::string name, std::string description)
+Item::itemSerialCounter	include/item.hpp	/^        static int itemSerialCounter;$/;"	m	class:Item	access:public
+Item::~Item	include/item.hpp	/^        ~Item();$/;"	p	class:Item	access:public	signature:()
+ItemHandler	include/handlers.hpp	/^        ItemHandler(World* currentWorld);$/;"	p	class:ItemHandler	access:public	signature:(World* currentWorld)
+ItemHandler	include/handlers.hpp	/^class ItemHandler : public Handler {$/;"	c	inherits:Handler
+ItemHandler::ItemHandler	include/handlers.hpp	/^        ItemHandler(World* currentWorld);$/;"	p	class:ItemHandler	access:public	signature:(World* currentWorld)
+ItemHandler::recieveNotification	include/handlers.hpp	/^        void recieveNotification();$/;"	p	class:ItemHandler	access:public	signature:()
+ItemNotifier	include/notifiers.hpp	/^class ItemNotifier : public Notifier {};$/;"	c	inherits:Notifier
+MAGENTA	include/headers.hpp	14;"	d
+MovementHandler	include/handlers.hpp	/^        MovementHandler(World* currentWorld);$/;"	p	class:MovementHandler	access:public	signature:(World* currentWorld)
+MovementHandler	include/handlers.hpp	/^class MovementHandler : public Handler { $/;"	c	inherits:Handler
+MovementHandler::MovementHandler	include/handlers.hpp	/^        MovementHandler(World* currentWorld);$/;"	p	class:MovementHandler	access:public	signature:(World* currentWorld)
+MovementHandler::recieveNotification	include/handlers.hpp	/^        void recieveNotification();$/;"	p	class:MovementHandler	access:public	signature:()
+MovementNotifier	include/notifiers.hpp	/^class MovementNotifier : public Notifier {};$/;"	c	inherits:Notifier
+NOTIFIERS_HPP_INCLUDED	include/notifiers.hpp	4;"	d
+Notifier	include/notifiers.hpp	/^class Notifier { $/;"	c
+Notifier::notify	include/notifiers.hpp	/^        void notify();$/;"	p	class:Notifier	access:public	signature:()
+Notifier::regHandler	include/notifiers.hpp	/^        void regHandler(Handler* handler );$/;"	p	class:Notifier	access:public	signature:(Handler* handler )
+Notifier::registeredHandlers_	include/notifiers.hpp	/^        std::set<Handler*> registeredHandlers_;$/;"	m	class:Notifier	access:private
+Notifier::unregHandler	include/notifiers.hpp	/^        void unregHandler(Handler* handler);$/;"	p	class:Notifier	access:public	signature:(Handler* handler)
+RED	include/headers.hpp	10;"	d
+RESET	include/headers.hpp	8;"	d
+ROOM_HPP_INCLUDED	include/room.hpp	4;"	d
+Room	include/room.hpp	/^        Room();$/;"	p	class:Room	access:public	signature:()
+Room	include/room.hpp	/^class Room {$/;"	c
+Room::Commands::parseCommand	include/room.hpp	/^        friend bool Commands::parseCommand(Soul* playerSoul, $/;"	p	class:Room::Commands	access:friend	signature:(Soul* playerSoul, std::string command)
+Room::ID_	include/room.hpp	/^        int ID_;$/;"	m	class:Room	access:private
+Room::Room	include/room.hpp	/^        Room();$/;"	p	class:Room	access:public	signature:()
+Room::getInfo	include/room.hpp	/^        InfoModule* getInfo();$/;"	p	class:Room	access:public	signature:()
+Room::getRoom	include/room.hpp	/^        Room* getRoom(std::string direction);$/;"	p	class:Room	access:public	signature:(std::string direction)
+Room::info_	include/room.hpp	/^        InfoModule* info_;$/;"	m	class:Room	access:private
+Room::initialize	include/room.hpp	/^        void initialize(std::string type, std::string name,$/;"	p	class:Room	access:public	signature:(std::string type, std::string name, std::string description)
+Room::insert	include/room.hpp	/^        void insert(Item* item);$/;"	p	class:Room	access:public	signature:(Item* item)
+Room::insert	include/room.hpp	/^        void insert(Soul* soul);$/;"	p	class:Room	access:public	signature:(Soul* soul)
+Room::itemsInRoom_	include/room.hpp	/^        std::set<Item*> itemsInRoom_;$/;"	m	class:Room	access:private
+Room::link	include/room.hpp	/^        void link(Room* toLink, std::string direction);$/;"	p	class:Room	access:public	signature:(Room* toLink, std::string direction)
+Room::linkedRooms_	include/room.hpp	/^        std::map<std::string, Room*> linkedRooms_;$/;"	m	class:Room	access:private
+Room::remove	include/room.hpp	/^        void remove(Item* item);$/;"	p	class:Room	access:public	signature:(Item* item)
+Room::remove	include/room.hpp	/^        void remove(Soul* soul);$/;"	p	class:Room	access:public	signature:(Soul* soul)
+Room::roomSerialCounter	include/room.hpp	/^        static int roomSerialCounter; \/\/ Counter of room serial numbers$/;"	m	class:Room	access:public
+Room::soulsInRoom_	include/room.hpp	/^        std::set<Soul*> soulsInRoom_;$/;"	m	class:Room	access:private
+Room::~Room	include/room.hpp	/^        ~Room();$/;"	p	class:Room	access:public	signature:()
+SOUL_HPP_INCLUDED	include/soul.hpp	4;"	d
+Soul	include/soul.hpp	/^        Soul();$/;"	p	class:Soul	access:private	signature:()
+Soul	include/soul.hpp	/^        Soul(World* currentWorld); $/;"	p	class:Soul	access:public	signature:(World* currentWorld)
+Soul	include/soul.hpp	/^        Soul(World* currentWorld, Room* currentRoom); $/;"	p	class:Soul	access:public	signature:(World* currentWorld, Room* currentRoom)
+Soul	include/soul.hpp	/^class Soul {$/;"	c
+Soul::Commands::parseCommand	include/soul.hpp	/^        friend bool Commands::parseCommand( Soul* playerSoul, $/;"	p	class:Soul::Commands	access:friend	signature:( Soul* playerSoul, std::string command)
+Soul::HP_	include/soul.hpp	/^        int HP_;$/;"	m	class:Soul	access:public
+Soul::ID_	include/soul.hpp	/^        int ID_; $/;"	m	class:Soul	access:private
+Soul::Soul	include/soul.hpp	/^        Soul();$/;"	p	class:Soul	access:private	signature:()
+Soul::Soul	include/soul.hpp	/^        Soul(World* currentWorld); $/;"	p	class:Soul	access:public	signature:(World* currentWorld)
+Soul::Soul	include/soul.hpp	/^        Soul(World* currentWorld, Room* currentRoom); $/;"	p	class:Soul	access:public	signature:(World* currentWorld, Room* currentRoom)
+Soul::attributes_	include/soul.hpp	/^        std::unordered_map<std::string, int> attributes_;$/;"	m	class:Soul	access:private
+Soul::currentRoom_	include/soul.hpp	/^        Room* currentRoom_;$/;"	m	class:Soul	access:private
+Soul::currentWorld_	include/soul.hpp	/^        World* currentWorld_;$/;"	m	class:Soul	access:private
+Soul::die	include/soul.hpp	/^        void die();$/;"	p	class:Soul	access:public	signature:()
+Soul::drop	include/soul.hpp	/^        void drop(Item* toGet);$/;"	p	class:Soul	access:public	signature:(Item* toGet)
+Soul::equip	include/soul.hpp	/^        void equip(Equipment* toEquip);$/;"	p	class:Soul	access:public	signature:(Equipment* toEquip)
+Soul::equippedItems_	include/soul.hpp	/^        std::unordered_map<std::string, Equipment*> equippedItems_;$/;"	m	class:Soul	access:protected
+Soul::get	include/soul.hpp	/^        void get(Item* toGet);$/;"	p	class:Soul	access:public	signature:(Item* toGet)
+Soul::getAttribute	include/soul.hpp	/^        std::pair<int, int> getAttribute(std::string attribute);$/;"	p	class:Soul	access:public	signature:(std::string attribute)
+Soul::getInfo	include/soul.hpp	/^        InfoModule* getInfo();$/;"	p	class:Soul	access:public	signature:()
+Soul::info_	include/soul.hpp	/^        InfoModule* info_;$/;"	m	class:Soul	access:private
+Soul::initialize	include/soul.hpp	/^        void initialize(std::string type, std::string name, $/;"	p	class:Soul	access:public	signature:(std::string type, std::string name, std::string description, std::string display)
+Soul::inventory_	include/soul.hpp	/^        std::set<Item*> inventory_;$/;"	m	class:Soul	access:private
+Soul::itemAttributes_	include/soul.hpp	/^                std::unordered_map<std::string, int> itemAttributes_;$/;"	m	class:Soul	access:protected
+Soul::maxHP_	include/soul.hpp	/^        int maxHP_; $/;"	m	class:Soul	access:private
+Soul::move	include/soul.hpp	/^        void move(std::string direction);$/;"	p	class:Soul	access:public	signature:(std::string direction)
+Soul::setAttribute	include/soul.hpp	/^        void setAttribute(std::string attribute, int amount);$/;"	p	class:Soul	access:public	signature:(std::string attribute, int amount)
+Soul::setTarget	include/soul.hpp	/^        void setTarget(Soul* target);$/;"	p	class:Soul	access:public	signature:(Soul* target)
+Soul::setWorld	include/soul.hpp	/^        void setWorld(World* currentWorld); $/;"	p	class:Soul	access:public	signature:(World* currentWorld)
+Soul::soulSerialCounter	include/soul.hpp	/^        static int soulSerialCounter;$/;"	m	class:Soul	access:public
+Soul::target_	include/soul.hpp	/^        Soul* target_;$/;"	m	class:Soul	access:private
+Soul::unequip	include/soul.hpp	/^        void unequip(std::string slotToUnequip);$/;"	p	class:Soul	access:public	signature:(std::string slotToUnequip)
+Soul::weakAttack	include/soul.hpp	/^        void weakAttack();$/;"	p	class:Soul	access:public	signature:()
+WEAPON_H_INCLUDED	include/weapon.hpp	4;"	d
+WHITE	include/headers.hpp	16;"	d
+WORLD_HPP_INCLUDED	include/world.hpp	4;"	d
+Weapon	include/weapon.hpp	/^class Weapon : public Item$/;"	c	inherits:Item
+World	include/world.hpp	/^        World();$/;"	p	class:World	access:public	signature:()
+World	include/world.hpp	/^class World {$/;"	c
+World::World	include/world.hpp	/^        World();$/;"	p	class:World	access:public	signature:()
+World::attackHandler_	include/world.hpp	/^        AttackHandler attackHandler_;$/;"	m	class:World	access:public
+World::combatEvents_	include/world.hpp	/^            combatEvents_;$/;"	m	class:World	access:private
+World::combatNotifier_	include/world.hpp	/^        CombatNotifier combatNotifier_;$/;"	m	class:World	access:public
+World::itemEvents_	include/world.hpp	/^        std::queue< std::tuple<Soul*, Item*, std::string> > itemEvents_;$/;"	m	class:World	access:private
+World::itemHandler_	include/world.hpp	/^        ItemHandler itemHandler_;$/;"	m	class:World	access:public
+World::itemNotifier_	include/world.hpp	/^        ItemNotifier itemNotifier_;$/;"	m	class:World	access:public
+World::movementEvents_	include/world.hpp	/^        std::queue< std::pair<Soul*, std::string> > movementEvents_;$/;"	m	class:World	access:private
+World::movementHandler_	include/world.hpp	/^        MovementHandler movementHandler_;$/;"	m	class:World	access:public
+World::movementNotifier_	include/world.hpp	/^        MovementNotifier movementNotifier_;$/;"	m	class:World	access:public
+World::regAttackEvent	include/world.hpp	/^        void regAttackEvent(Soul* attacker, Soul* target, \\$/;"	p	class:World	access:public	signature:(Soul* attacker, Soul* target, \ Attacks::Attack* attack)
+World::regItemEvent	include/world.hpp	/^        void regItemEvent(Soul* soul, Item* item, std::string command);$/;"	p	class:World	access:public	signature:(Soul* soul, Item* item, std::string command)
+World::regMoveEvent	include/world.hpp	/^        void regMoveEvent(Soul* soul, std::string direction);$/;"	p	class:World	access:public	signature:(Soul* soul, std::string direction)
+YELLOW	include/headers.hpp	12;"	d
+additionalAttributes_	include/item.hpp	/^        std::unordered_map<std::string, int> additionalAttributes_;$/;"	m	class:Equipment	access:public
+attackHandler_	include/world.hpp	/^        AttackHandler attackHandler_;$/;"	m	class:World	access:public
+attributes_	include/soul.hpp	/^        std::unordered_map<std::string, int> attributes_;$/;"	m	class:Soul	access:private
+combatEvents_	include/world.hpp	/^            combatEvents_;$/;"	m	class:World	access:private
+combatNotifier_	include/world.hpp	/^        CombatNotifier combatNotifier_;$/;"	m	class:World	access:public
+currentRoom_	include/soul.hpp	/^        Room* currentRoom_;$/;"	m	class:Soul	access:private
+currentWorld_	include/handlers.hpp	/^        World* currentWorld_;$/;"	m	class:Handler	access:protected
+currentWorld_	include/soul.hpp	/^        World* currentWorld_;$/;"	m	class:Soul	access:private
+damage_	include/attacks.hpp	/^            int damage_;$/;"	m	class:Attacks::Attack	access:private
+description_	include/info.hpp	/^        std::string description_;$/;"	m	class:InfoModule	access:private
+die	include/soul.hpp	/^        void die();$/;"	p	class:Soul	access:public	signature:()
+display_	include/info.hpp	/^        std::string display_;$/;"	m	class:InfoModule	access:private
+drop	include/soul.hpp	/^        void drop(Item* toGet);$/;"	p	class:Soul	access:public	signature:(Item* toGet)
+equip	include/soul.hpp	/^        void equip(Equipment* toEquip);$/;"	p	class:Soul	access:public	signature:(Equipment* toEquip)
+equippedItems_	include/soul.hpp	/^        std::unordered_map<std::string, Equipment*> equippedItems_;$/;"	m	class:Soul	access:protected
+equippedSlot_	include/item.hpp	/^        std::string equippedSlot_;$/;"	m	class:Equipment	access:public
+fetchObject	include/command.hpp	/^    template<typename T> T* fetchObject(std::string name, $/;"	p	namespace:Commands	signature:(std::string name, std::set<T*> objectSet)
+formatPrint	include/handlers.hpp	/^void formatPrint(std::string toPrint);$/;"	p	signature:(std::string toPrint)
+get	include/soul.hpp	/^        void get(Item* toGet);$/;"	p	class:Soul	access:public	signature:(Item* toGet)
+getAttribute	include/soul.hpp	/^        std::pair<int, int> getAttribute(std::string attribute);$/;"	p	class:Soul	access:public	signature:(std::string attribute)
+getDamage	include/attacks.hpp	/^            int getDamage();$/;"	p	class:Attacks::Attack	access:public	signature:()
+getDescription	include/info.hpp	/^        std::string getDescription();$/;"	p	class:InfoModule	access:public	signature:()
+getID	include/info.hpp	/^        int getID();$/;"	p	class:InfoModule	access:public	signature:()
+getInfo	include/item.hpp	/^        InfoModule* getInfo(); $/;"	p	class:Item	access:public	signature:()
+getInfo	include/room.hpp	/^        InfoModule* getInfo();$/;"	p	class:Room	access:public	signature:()
+getInfo	include/soul.hpp	/^        InfoModule* getInfo();$/;"	p	class:Soul	access:public	signature:()
+getName	include/info.hpp	/^        std::string getName();$/;"	p	class:InfoModule	access:public	signature:()
+getRoom	include/room.hpp	/^        Room* getRoom(std::string direction);$/;"	p	class:Room	access:public	signature:(std::string direction)
+getType	include/info.hpp	/^        std::string getType();$/;"	p	class:InfoModule	access:public	signature:()
+info_	include/item.hpp	/^        InfoModule* info_;$/;"	m	class:Item	access:private
+info_	include/room.hpp	/^        InfoModule* info_;$/;"	m	class:Room	access:private
+info_	include/soul.hpp	/^        InfoModule* info_;$/;"	m	class:Soul	access:private
+initialize	include/item.hpp	/^        void initialize(std::string type, std::string name,$/;"	p	class:Item	access:public	signature:(std::string type, std::string name, std::string description)
+initialize	include/room.hpp	/^        void initialize(std::string type, std::string name,$/;"	p	class:Room	access:public	signature:(std::string type, std::string name, std::string description)
+initialize	include/soul.hpp	/^        void initialize(std::string type, std::string name, $/;"	p	class:Soul	access:public	signature:(std::string type, std::string name, std::string description, std::string display)
+insert	include/room.hpp	/^        void insert(Item* item);$/;"	p	class:Room	access:public	signature:(Item* item)
+insert	include/room.hpp	/^        void insert(Soul* soul);$/;"	p	class:Room	access:public	signature:(Soul* soul)
+inventory_	include/soul.hpp	/^        std::set<Item*> inventory_;$/;"	m	class:Soul	access:private
+isEquipped_	include/item.hpp	/^        bool isEquipped_;$/;"	m	class:Equipment	access:public
+itemAttributes_	include/soul.hpp	/^                std::unordered_map<std::string, int> itemAttributes_;$/;"	m	class:Soul	access:protected
+itemEvents_	include/world.hpp	/^        std::queue< std::tuple<Soul*, Item*, std::string> > itemEvents_;$/;"	m	class:World	access:private
+itemHandler_	include/world.hpp	/^        ItemHandler itemHandler_;$/;"	m	class:World	access:public
+itemNotifier_	include/world.hpp	/^        ItemNotifier itemNotifier_;$/;"	m	class:World	access:public
+itemSerialCounter	include/item.hpp	/^        static int itemSerialCounter;$/;"	m	class:Item	access:public
+itemsInRoom_	include/room.hpp	/^        std::set<Item*> itemsInRoom_;$/;"	m	class:Room	access:private
+link	include/room.hpp	/^        void link(Room* toLink, std::string direction);$/;"	p	class:Room	access:public	signature:(Room* toLink, std::string direction)
+linkedRooms_	include/room.hpp	/^        std::map<std::string, Room*> linkedRooms_;$/;"	m	class:Room	access:private
+maxHP_	include/soul.hpp	/^        int maxHP_; $/;"	m	class:Soul	access:private
+move	include/soul.hpp	/^        void move(std::string direction);$/;"	p	class:Soul	access:public	signature:(std::string direction)
+movementEvents_	include/world.hpp	/^        std::queue< std::pair<Soul*, std::string> > movementEvents_;$/;"	m	class:World	access:private
+movementHandler_	include/world.hpp	/^        MovementHandler movementHandler_;$/;"	m	class:World	access:public
+movementNotifier_	include/world.hpp	/^        MovementNotifier movementNotifier_;$/;"	m	class:World	access:public
+name_	include/info.hpp	/^        std::string name_;$/;"	m	class:InfoModule	access:private
+notify	include/notifiers.hpp	/^        void notify();$/;"	p	class:Notifier	access:public	signature:()
+parseCommand	include/command.hpp	/^    bool parseCommand(Soul* playerSoul, std::string command);  $/;"	p	namespace:Commands	signature:(Soul* playerSoul, std::string command)
+parseCommand	include/room.hpp	/^        friend bool Commands::parseCommand(Soul* playerSoul, $/;"	p	class:Room::Commands	access:friend	signature:(Soul* playerSoul, std::string command)
+parseCommand	include/soul.hpp	/^        friend bool Commands::parseCommand( Soul* playerSoul, $/;"	p	class:Soul::Commands	access:friend	signature:( Soul* playerSoul, std::string command)
+recieveNotification	include/handlers.hpp	/^        virtual void recieveNotification() = 0;$/;"	p	class:Handler	access:public	signature:()
+recieveNotification	include/handlers.hpp	/^        void recieveNotification();$/;"	p	class:AttackHandler	access:public	signature:()
+recieveNotification	include/handlers.hpp	/^        void recieveNotification();$/;"	p	class:ItemHandler	access:public	signature:()
+recieveNotification	include/handlers.hpp	/^        void recieveNotification();$/;"	p	class:MovementHandler	access:public	signature:()
+regAttackEvent	include/world.hpp	/^        void regAttackEvent(Soul* attacker, Soul* target, \\$/;"	p	class:World	access:public	signature:(Soul* attacker, Soul* target, \ Attacks::Attack* attack)
+regHandler	include/notifiers.hpp	/^        void regHandler(Handler* handler );$/;"	p	class:Notifier	access:public	signature:(Handler* handler )
+regItemEvent	include/world.hpp	/^        void regItemEvent(Soul* soul, Item* item, std::string command);$/;"	p	class:World	access:public	signature:(Soul* soul, Item* item, std::string command)
+regMoveEvent	include/world.hpp	/^        void regMoveEvent(Soul* soul, std::string direction);$/;"	p	class:World	access:public	signature:(Soul* soul, std::string direction)
+registeredHandlers_	include/notifiers.hpp	/^        std::set<Handler*> registeredHandlers_;$/;"	m	class:Notifier	access:private
+remove	include/room.hpp	/^        void remove(Item* item);$/;"	p	class:Room	access:public	signature:(Item* item)
+remove	include/room.hpp	/^        void remove(Soul* soul);$/;"	p	class:Room	access:public	signature:(Soul* soul)
+roomSerialCounter	include/room.hpp	/^        static int roomSerialCounter; \/\/ Counter of room serial numbers$/;"	m	class:Room	access:public
+setAttribute	include/item.hpp	/^        void setAttribute(std::string attribute, int amount);$/;"	p	class:Equipment	access:public	signature:(std::string attribute, int amount)
+setAttribute	include/soul.hpp	/^        void setAttribute(std::string attribute, int amount);$/;"	p	class:Soul	access:public	signature:(std::string attribute, int amount)
+setTarget	include/soul.hpp	/^        void setTarget(Soul* target);$/;"	p	class:Soul	access:public	signature:(Soul* target)
+setWorld	include/soul.hpp	/^        void setWorld(World* currentWorld); $/;"	p	class:Soul	access:public	signature:(World* currentWorld)
+soulSerialCounter	include/soul.hpp	/^        static int soulSerialCounter;$/;"	m	class:Soul	access:public
+soulsInRoom_	include/room.hpp	/^        std::set<Soul*> soulsInRoom_;$/;"	m	class:Room	access:private
+split	include/command.hpp	/^    std::vector<std::string> split(const std::string command, $/;"	p	namespace:Commands	signature:(const std::string command, char delimiter)
+target_	include/soul.hpp	/^        Soul* target_;$/;"	m	class:Soul	access:private
+type_	include/info.hpp	/^        std::string type_;$/;"	m	class:InfoModule	access:private
+unequip	include/soul.hpp	/^        void unequip(std::string slotToUnequip);$/;"	p	class:Soul	access:public	signature:(std::string slotToUnequip)
+unregHandler	include/notifiers.hpp	/^        void unregHandler(Handler* handler);$/;"	p	class:Notifier	access:public	signature:(Handler* handler)
+unwatchNotifier	include/handlers.hpp	/^        void unwatchNotifier(Notifier* toUnwatch);$/;"	p	class:Handler	access:public	signature:(Notifier* toUnwatch)
+watchNotifier	include/handlers.hpp	/^        void watchNotifier(Notifier* toWatch);$/;"	p	class:Handler	access:public	signature:(Notifier* toWatch)
+watching_	include/handlers.hpp	/^        Notifier* watching_;$/;"	m	class:Handler	access:protected
+weakAttack	include/soul.hpp	/^        void weakAttack();$/;"	p	class:Soul	access:public	signature:()
+~Item	include/item.hpp	/^        ~Item();$/;"	p	class:Item	access:public	signature:()
+~Room	include/room.hpp	/^        ~Room();$/;"	p	class:Room	access:public	signature:()

@@ -14,18 +14,21 @@
 
 class InfoModule {
     public:
-        InfoModule(int ID, std::string type, std::string name,
+        InfoModule(std::string type, std::string name,
                 std::string description);
-        int getID();
+        InfoModule(std::string type, std::string name,
+                std::string description, std::string display);
+
         std::string getType();
         std::string getName();
         std::string getDescription();
+        std::string getDisplay();
         
     private:
-        int ID_;
         std::string type_;
         std::string name_;
         std::string description_;
+        std::string display_;
 };
 
 #endif

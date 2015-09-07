@@ -21,7 +21,7 @@ class Item {
         Item(Room* currentRoom);
         ~Item();
         void initialize(std::string type, std::string name,
-                std::string description);
+                std::string description, std::string display);
         InfoModule* getInfo(); 
 
     private:
@@ -42,7 +42,6 @@ class Equipment : public Item {
 
     private:
 };
-
 
 #endif
 

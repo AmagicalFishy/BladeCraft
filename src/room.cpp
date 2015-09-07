@@ -6,8 +6,8 @@
 int Room::roomSerialCounter = 000000;
 
 // Default construct empty room
-Room::Room() { 
-    ID_ = roomSerialCounter++; 
+Room::Room(std::array<int, 3> ID) : info_(nullptr), ID_(ID) { 
+    ID_ = ID; 
     linkedRooms_["north"] = nullptr;
     linkedRooms_["east"] = nullptr;
     linkedRooms_["south"] = nullptr;
@@ -21,7 +21,8 @@ Room::~Room() { delete info_; }
 // Initialize room w/ actual info provided
 void Room::initialize(std::string type, std::string name,
         std::string description) { 
-    info_ = new InfoModule(ID_, type, name, description);
+    if (info_ != nullptr) { delete info_; }
+    info_ = new InfoModule(type, name, description);
 }
 
 // Return room's info module
@@ -41,8 +42,10 @@ void Room::link(Room* toLink, std::string direction) {
 }
 
 // Return room in specified direction
-Room* Room::getRoom(std::string direction) { 
+Room* Room::getRoom() { return this; }
+Room* Room::getRoom(std::string direction) {
     return linkedRooms_[direction];
 }
+std::array<int, 3> Room::getID() { return ID_; }
 
 

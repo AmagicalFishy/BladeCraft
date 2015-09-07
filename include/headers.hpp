@@ -27,13 +27,14 @@
 // Included dependencies
 
 #include "attacks.hpp"
+#include "command.hpp"
 #include "handlers.hpp"
+#include "info.hpp"
 #include "item.hpp"
 #include "notifiers.hpp"
 #include "room.hpp"
 #include "soul.hpp"
 #include "world.hpp"
-#include "info.hpp"
 
 #endif
 

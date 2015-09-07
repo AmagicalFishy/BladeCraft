@@ -15,8 +15,9 @@ Item::Item(Room* currentRoom) {
 Item::~Item() { delete info_; }
 
 void Item::initialize(std::string type, std::string name,
-                std::string description) { 
-    info_ = new InfoModule(ID_, type, name, description);
+                std::string description, std::string display) { 
+    delete info_; // In case info already exists
+    info_ = new InfoModule(type, name, description);
 }
 
 InfoModule* Item::getInfo() { return info_; }

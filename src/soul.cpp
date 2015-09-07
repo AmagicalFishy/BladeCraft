@@ -1,9 +1,13 @@
 #include "attacks.hpp"
+#include "info.hpp"
 #include "item.hpp"
 #include "soul.hpp"
 #include "world.hpp"
 
-Soul::Soul() : HP_(100), maxHP_(100) { 
+int Soul::soulSerialCounter = 0;
+Soul::Soul() : HP_(100), ID_(soulSerialCounter), maxHP_(100) { 
+    ++soulSerialCounter;
+
     attributes_["str"] = 5;
     attributes_["def"] = 3;
 
@@ -13,7 +17,8 @@ Soul::Soul() : HP_(100), maxHP_(100) {
     equippedItems_["head"] = nullptr;
     equippedItems_["body"] = nullptr;
     equippedItems_["legs"] = nullptr;
-    equippedItems_["held"] = nullptr;
+    equippedItems_["lhand"] = nullptr;
+    equippedItems_["rhand"] = nullptr;
 }
 
 Soul::Soul(World* currentWorld) : Soul() { 
@@ -21,7 +26,17 @@ Soul::Soul(World* currentWorld) : Soul() {
 }
 
 Soul::Soul(World* currentWorld, Room* currentRoom) 
-: Soul(currentWorld) { currentRoom_ = currentRoom; }
+: Soul(currentWorld) { 
+    currentRoom_ = currentRoom; 
+    currentRoom_->insert(this);
+}
+
+// Fill soul with information
+void Soul::initialize(std::string type, std::string name, 
+        std::string description, std::string display) {
+    delete info_; // In case info already exists
+    info_ = new InfoModule(type, name, description);
+}
 
 // Set world of current Soul
 void Soul::setWorld(World* currentWorld) { 
@@ -39,12 +54,18 @@ std::pair<int, int> Soul::getAttribute(std::string attribute) {
         (attributes_[attribute], itemAttributes_[attribute]);
     return attributePair; 
 }
+
+// Return the information module of this soul
+InfoModule* Soul::getInfo() { return info_; }
+
 // Equip an item
 void Soul::equip(Equipment* toEquip) {
     equippedItems_[toEquip->equippedSlot_] = toEquip;
     toEquip->isEquipped_ = true;
 
     std::unordered_map<std::string, int>::iterator itemStats;
+
+    // Update attributes based on equipped items
     itemStats = toEquip->additionalAttributes_.begin();
     while (itemStats != 
             toEquip->additionalAttributes_.end()) {
@@ -83,11 +104,10 @@ void Soul::unequip(std::string slotToUnequip) {
 }
 
 // Kill soul
-//Soul::die() {
-//    if (this->HP_ <= 0) {
-//        currentWorld->regDeathEvent(this);
-//    }
-//}
+#include <iostream>
+void Soul::die() {
+    std::cout << "DED\n";
+}
 
 // Perform a weak attack
 void Soul::weakAttack() { 

@@ -1,11 +1,17 @@
 #include "info.hpp"
 
-InfoModule::InfoModule(int ID, std::string type, std::string name, 
+InfoModule::InfoModule(std::string type, std::string name, 
         std::string description)
-: ID_(ID), type_(type), name_(name), description_(description) {}
+: type_(type), name_(name), description_(description),
+display_("None") {}
 
-int InfoModule::getID() { return ID_; }
+InfoModule::InfoModule(std::string type, std::string name, 
+        std::string description, std::string display)
+: type_(type), name_(name), description_(description),
+  display_(display) {}
+
 std::string InfoModule::getType() { return type_; }
 std::string InfoModule::getName() { return name_; }
 std::string InfoModule::getDescription() { return description_; }
+std::string InfoModule::getDisplay() { return display_; }
 

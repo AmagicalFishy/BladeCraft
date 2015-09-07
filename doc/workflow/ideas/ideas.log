@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.12)  24 AUG 2015 12:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.12)  6 SEP 2015 23:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex
-(/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex
+**/home/javi/Documents/VitaIndicium/projects/BladeCraft/doc/workflow/ideas/ideas.tex
+(/home/javi/Documents/VitaIndicium/projects/BladeCraft/doc/workflow/ideas/ideas.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -377,10 +377,10 @@ Overfull \hbox (25.72244pt too wide) detected at line 19
 [][]
  []
 
-/home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex:57: Misplaced \noalign.
+/home/javi/Documents/VitaIndicium/projects/BladeCraft/doc/workflow/ideas/ideas.tex:60: Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.57 \hline
+l.60 \hline
            
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -390,14 +390,14 @@ an alignment. Proceed, and I'll ignore this case.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./ideas.aux) ) 
 Here is how much of TeX's memory you used:
  12939 strings out of 495028
- 267779 string characters out of 6181497
+ 267806 string characters out of 6181497
  300004 words of memory out of 5000000
  15917 multiletter control sequences out of 15000+600000
  5353 words of font info for 20 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 61i,16n,84p,535b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,16n,84p,544b,931s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on ideas.pdf (2 pages, 65323 bytes).
+Output written on ideas.pdf (2 pages, 66843 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  24 compressed objects within 1 object stream

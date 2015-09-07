@@ -1,5 +1,7 @@
+#include<iomanip>
 #include <iostream>
 #include <tuple>
+#include <algorithm>
 #include "attacks.hpp"
 #include "notifiers.hpp"
 #include "soul.hpp"
@@ -28,10 +30,17 @@ void AttackHandler::recieveNotification() {
     Attacks::Attack* attack 
         = std::get<2>(currentWorld_->combatEvents_.front());
     int damage = attack->getDamage();
+    
     defender->HP_ -= damage;
     delete attack;
     attack = nullptr;
     currentWorld_->combatEvents_.pop();
+    std::cout << defender->getInfo()->getName() << " " << 
+        defender->HP_ << "\n";
+
+    if (defender->HP_ <= 0) {
+        defender->die();
+    }
 }
 
 //====================
@@ -43,7 +52,8 @@ void MovementHandler::recieveNotification() {
     Soul* soul = std::get<0>(currentWorld_->movementEvents_.front());
     std::string direction = 
         std::get<1>(currentWorld_->movementEvents_.front());
-    Room* destinationRoom = soul->currentRoom_->getRoom(direction);
+    Room* destinationRoom = 
+        soul->currentRoom_->getRoom(direction);
 
     // Do nothing if there isn't an exit there
     if (destinationRoom == false) { 
@@ -58,26 +68,45 @@ void MovementHandler::recieveNotification() {
     destinationRoom->insert(soul);
     currentWorld_->movementEvents_.pop();
 
-    // Print out room and contents
+    // Print out room description
     std::cout << BOLDWHITE << "\n" << 
         destinationRoom->getInfo()->getName() << "\n" << RESET;
     std::cout << GREEN << 
         destinationRoom->getInfo()->getDescription() << "\n\n" << 
         RESET;
-    std::cout << "Contains: " << "\n";
-    for (auto items = destinationRoom->itemsInRoom_.begin();
-            items != destinationRoom->itemsInRoom_.end(); ++items) {
-        std::cout << "- " << (*items)->getInfo()->getName() << "\n";
+
+    // Print out items and Souls
+    int maxSize = std::max(destinationRoom->itemsInRoom_.size(), 
+            destinationRoom->soulsInRoom_.size() - 1);
+    formatPrint("Items:");
+    formatPrint("Souls:");
+    std::cout << "\n";
+    auto items = destinationRoom->itemsInRoom_.begin();
+    auto souls = destinationRoom->soulsInRoom_.begin();
+    ++souls; // Skip the player
+    for (int ii = 0; ii < maxSize; ++ii) {
+        if (items != destinationRoom->itemsInRoom_.end()) {
+            formatPrint("- " + (*items)->getInfo()->getName());
+            ++items;
+        }
+        else { formatPrint(" "); }
+
+        if (souls != destinationRoom->soulsInRoom_.end()) {
+            formatPrint("- " + (*souls)->getInfo()->getName());
+            ++souls;
+        }
+        std::cout << "\n";
     }
     std::cout << "\n";
 }
 
+//====================
 // Item Handler
 ItemHandler::ItemHandler(World* currentWorld)
 : Handler(currentWorld) {}
 
 void ItemHandler::recieveNotification() {
-    enum ItemAction { drop = 0, get };
+    enum ItemAction { drop = 0, get, equip};
 
     Soul* soul = std::get<0>(currentWorld_->itemEvents_.front());
     Item* item = std::get<1>(currentWorld_->itemEvents_.front());
@@ -87,6 +116,7 @@ void ItemHandler::recieveNotification() {
     std::map<std::string, int> itemAction;
     itemAction["drop"] = drop;
     itemAction["get"] = get;
+    //itemAction["equip"] = equip;
 
     switch (itemAction[command]) {
         case drop:
@@ -101,33 +131,12 @@ void ItemHandler::recieveNotification() {
     currentWorld_->itemEvents_.pop();
 }
 
-    
+// Function that helps format how items and souls in room print
+const char separator = ' ';
+const int columnWidth = 30;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void formatPrint(std::string toPrint) {
+    std::cout << std::left << std::setw(columnWidth) << 
+        std::setfill(separator) << toPrint;
+}
 

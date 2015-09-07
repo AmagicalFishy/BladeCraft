@@ -1,9 +1,9 @@
-PWD /home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas
+PWD /home/javi/Documents/VitaIndicium/projects/BladeCraft/doc/workflow/ideas
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/javi/Documents/VitaIndicium/BladeCraft/doc/workflow/ideas/ideas.tex
+INPUT /home/javi/Documents/VitaIndicium/projects/BladeCraft/doc/workflow/ideas/ideas.tex
 OUTPUT ideas.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

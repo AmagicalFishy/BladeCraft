@@ -46,5 +46,7 @@ class ItemHandler : public Handler {
         void recieveNotification();
 };
 
+void formatPrint(std::string toPrint);
+
 #endif
 

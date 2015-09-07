@@ -1,0 +1,86 @@
+#include <iostream>
+#include "headers.hpp"
+
+int main() {
+    World* theWorld = new World;
+    Room* firstRoom = new Room;
+    Room* secondRoom = new Room;
+    Room* thirdRoom = new Room;
+
+    firstRoom->link(secondRoom, "north");
+    firstRoom->initialize("room", "The bedroom of an Inn",
+            "This is a small, dimly lit, carpeted room."
+            "");
+
+    secondRoom->link(firstRoom, "south"); 
+    secondRoom->link(thirdRoom, "down");
+    secondRoom->initialize("room", "The hallway in the Inn",
+            "Though sunlight shines through the windows, the Inn "
+            "itself is completely silent; your footsteps and the "
+            "creaking of the wood floor are its only sounds.");
+
+    thirdRoom->link(secondRoom, "up");
+    thirdRoom->initialize("room", "The Inn's lobby", "A simple "
+            "lobby. Papers are scattered about the front counter "
+            "and several tables and chairs are turned over. "
+            "Apparently, you slept through something rather chaotic.");
+
+    Equipment* sword = new Equipment("held", firstRoom);
+    sword->setAttribute("str", 10);
+    sword->setAttribute("def", 0);
+    sword->initialize("sword", "Longsword", "A long sword");
+
+    Equipment* shield = new Equipment("held", secondRoom);
+    shield->setAttribute("str", 0);
+    shield->setAttribute("def", 3);
+    shield->initialize("shield", "Wooden Shield", 
+            "A round, wooden shield");
+
+    Equipment* armor = new Equipment("body", secondRoom);
+    armor->setAttribute("str", 0);
+    armor->setAttribute("def", 5);
+    armor->initialize("armor", "Armor", "The torso part of a suit of "
+            "armor");
+
+    Equipment* helmet = new Equipment("helm", secondRoom);
+    helmet->setAttribute("str", 0);
+    helmet->setAttribute("def", 2);
+    helmet->initialize("helmet", "Leather Helmet", "A leather helmet");
+
+    Soul* playerSoul = new Soul(theWorld, firstRoom);
+
+    Equipment* BASH = new Equipment("held", firstRoom);
+    BASH->setAttribute("str", 25);
+    BASH->setAttribute("def", 50);
+    BASH->initialize("besh", "BASHLOL", "basher it bashes");
+    playerSoul->equip(BASH);
+
+    Soul* enemyOne = new Soul(theWorld, thirdRoom);
+    //Soul* enemyTwo = new Soul(theWorld, thirdRoom);
+
+    playerSoul->initialize("player", "You, the player", 
+            "Very handsome");
+
+    enemyOne->initialize("npc", "slime", "A medium-sized, bright "
+           "green slime monster. It wouldn't be very intimidating if "
+           "not for the half-decayed bones floating inside of it.");
+    //enemyTwo->initialize("npc", "A slime", "A medium-sized, bright "
+    //       "green slime monster. It wouldn't be very intimidating if "
+    //       "not for the half-decayed bones floating inside of it.");
+
+        std::string command;
+
+    bool runGame = true;
+
+    while (runGame == true) { 
+        std::cout << BOLDWHITE << "Command: " << BLUE;
+        std::getline(std::cin, command);
+        std::cout << RESET;
+        
+        runGame =Commands::parseCommand(playerSoul, command);
+
+        std::cout << RED << "HP: " << RESET << playerSoul->HP_ << "\n";
+    };
+
+    return 0;
+};

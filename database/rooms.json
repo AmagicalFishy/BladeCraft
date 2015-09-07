@@ -1,0 +1,32 @@
+{
+    "_comment": "X: [0,1]; Y: [0,1]; Z: [0,1]",
+    "0.0.1": {
+        "name": "The bedroom of an Inn",
+        "description": "This is a small, dimly lit, carpeted room.",
+        "link": ["north"]
+    },
+
+    "0.1.1": {
+        "name": "The Inn's upstairs hallway",
+        "description": "Though sunlight shines through the windows, the Inn itself is completely silent, save for your footsteps and the creaking of the wood floor.",
+        "link": ["south", "down"]
+    },
+
+    "0.1.0": { 
+        "name": "The Inn's lobby", 
+        "description": "A simple lobby. Papers are scattered about the front counter and several tables and chairs are turned over. Apparently, you slept through something rather chaotic.",
+        "link": ["south", "up"]
+    },
+
+    "0.0.0": {
+        "name": "Outside the Inn",
+        "description": "You stand on the main road of a small town. This is the end of the line, partner.",
+        "link": ["north", "east"]
+    },
+
+    "1.0.0": {
+        "name": "In the road",
+        "description": "The road is empty. The town is empty. You, on the other hand, are not.",
+        "link": ["west"]
+    }
+}
